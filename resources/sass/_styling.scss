@@ -118,3 +118,28 @@
     @extend %card-block;
     @extend %company-card;
 }
+
+//admin dashboard page
+
+.admin-dashboard {
+    border-top: solid lightgrey 1px;
+    margin-top: 40px;
+}
+
+.create-card {
+    @extend %card-block;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 780px;
+    margin: 40px auto;
+
+}
+
+.create-card-header {
+    margin: 0;
+}
+
+.create-button {
+    font-size: .8rem;
+}

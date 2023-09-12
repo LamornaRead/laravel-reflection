@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-main">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -19,5 +19,43 @@
             </div>
         </div>
     </div>
+    
+    <div class="admin-dashboard">
+        <div class="header">
+            <h3>Admin Page</h3>
+        </div>
+
+        <div class="create-card">
+            <div>
+                <h4 class="create-card-header">Create Company Files</h4>
+            </div> 
+
+            <div>
+                <a class="company-button create-button" href="#">Create</a>
+            </div>   
+        </div>
+
+        <div class="create-card">
+            <div>
+                <h4 class="create-card-header">Add Employee Files</h4>
+            </div> 
+
+            <div>
+                <a class="company-button create-button" href="#">Create</a>
+            </div>   
+        </div>
+
+        <div class="create-card">
+            <div>
+                <h4 class="create-card-header">View All Company Files</h4>
+            </div> 
+
+            <div>
+                <a class="company-button create-button" href="#">View</a>
+            </div>   
+        </div>
+    </div>
+
 </div>
+
 @endsection
