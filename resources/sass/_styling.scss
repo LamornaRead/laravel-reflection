@@ -1,4 +1,50 @@
 .header {
     text-align: center;
-    margin-top: 30px;
+    margin: 30px 0;
+}
+
+.container-main {
+    width: 60%;
+    margin: 100px auto;
+}
+
+.company-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    border: solid lightgrey 1px;
+    border-radius: 10px;
+    box-shadow: 0 15px 20px 10px rgba(0, 0, 0, 0.06);
+}
+
+.company-card-header {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: solid lightgrey 1px;
+}
+
+.company-card-img {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.company-img {
+    border-radius: 10px;
+}
+
+
+.company-button {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #de681f;
+    width: 40%;
+    padding: 10px 15px;
+    margin: 20px auto;
+    border-radius: 10px;
+    &:hover {
+        background-color: darken($color: #de681f, $amount: 5%);
+    }
 }
