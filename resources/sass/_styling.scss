@@ -8,10 +8,18 @@
     margin: 100px auto;
 }
 
+.container-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5%;
+    row-gap: 20px;
+}
+
 .company-card {
     display: flex;
     flex-direction: column;
-    max-width: 300px;
+    width: 300px;
     border: solid lightgrey 1px;
     border-radius: 10px;
     box-shadow: 0 15px 20px 10px rgba(0, 0, 0, 0.06);
@@ -19,8 +27,13 @@
 
 .company-card-header {
     text-align: center;
-    padding: 10px 0;
+    padding: 15px 0;
     border-bottom: solid lightgrey 1px;
+    & {
+        h3 {
+            margin: 0;
+        }
+    }
 }
 
 .company-card-img {
