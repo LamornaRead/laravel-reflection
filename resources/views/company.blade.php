@@ -6,26 +6,9 @@
             <div class="button-container">
                 <a class="company-button" href="/"><i class="fa-solid fa-arrow-left"></i> Go back</a>
             </div>
-            <div class="company-info-top">
-                <div class="info-img-container">
-                    <img class="info-img" src="https://picsum.photos/200" alt="random image">
-                </div>
-                
-                <div class="company-info">
-                    <h2>Company</h2>
-                    <p>Email</p>
-                    <p>Website</p>
-                </div>
-            </div>
-            <div class="company-info-bottom">
-                <h2>Employees</h2>
-                <ul>
-                    <li>random</li>
-                    <li>random</li>
-                    <li>random</li>
-                    <li>random</li>
-                    <li>random</li>
-                </ul>
+
+            <div>
+                <?= $company ?>
             </div>
         </div>
     </div>
