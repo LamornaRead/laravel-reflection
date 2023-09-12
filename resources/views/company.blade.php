@@ -3,6 +3,9 @@
 @section('content')
     <div class="container-main">
         <div class="info-container">
+            <div class="button-container">
+                <a class="company-button" href="/"><i class="fa-solid fa-arrow-left"></i> Go back</a>
+            </div>
             <div class="company-info-top">
                 <div class="info-img-container">
                     <img class="info-img" src="https://picsum.photos/200" alt="random image">
