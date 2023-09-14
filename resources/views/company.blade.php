@@ -19,10 +19,10 @@
                 </div>
             </div>
             <div class="company-info-bottom">
-                <h2>Employees</h2>
-                <ul>
+                <h2 class="emp-header">Employees <i class="fa-solid fa-user-group"></i></h2>
+                <ul class="emp-ul">
                     @foreach($company->employees as $em)
-                      <li>{{ $em->first_name }} {{ $em->last_name}}</li>
+                      <li class="emp-list">{{ $em->first_name }} {{ $em->last_name}} <a class="emp-button" href="/employee/{{ $em->first_name }}">View Info</a></li>
                     @endforeach
                 </ul>
             </div>

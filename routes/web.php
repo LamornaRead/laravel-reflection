@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Company;
+use App\Models\Employee;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +20,10 @@ Route::get('/', function () { return view('companies', ['companies' => Company::
 
 //a single view for a single company
 //need to add a connection to a list of employees for that single company
-Route::get('company/{company:name}', function (Company $company) {  return view('company', [ 'company' => $company]);});
+Route::get('company/{company:id}', function (Company $company) {  return view('company', [ 'company' => $company]);});
+
+//employee information
+Route::get('employee/{employee:first_name}', function (Employee $employee) { return view('employee', ['employee' => $employee]);} );
 
 Auth::routes();
 

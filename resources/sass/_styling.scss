@@ -119,6 +119,36 @@
     @extend %company-card;
 }
 
+.emp-header {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 15px;
+    margin-bottom: 40px;
+}
+.emp-ul {
+    list-style: none;
+    padding-left: 0;
+}
+.emp-list{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: lightgrey;
+    border-radius: 5px;
+}
+.emp-button {
+    color: white;
+    font-size: 0.8rem;
+    text-decoration: none;
+    background-color: #de681f;
+    padding: 5px;
+    border-radius: 5px;
+    &:hover {
+        background-color: darken($color: #de681f, $amount: 5%);
+    }
+}
+
 //admin dashboard page
 
 .admin-dashboard {
