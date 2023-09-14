@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Company;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,20 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('companies');
+    return view('companies', ['companies' => Company::all()]);
 });
 
-Route::get('company/{company}', function ($slug) {
+Route::get('company/{company}', function ($id) {
+    return view('company', [ 'company' => Company::find($id)]);
 
-    if (! file_exists($path = __DIR__ . "/../resources/companies/{$slug}.html")) {
-        return redirect('/');
-    }
-
-    $company = cache()->remember("company.{$slug}", 1200, fn() => file_get_contents($path));
-
-    return view('company', [ 'company' => $company]);
-    
-})->where('company', '[A-z_\-]+');
+});
 
 Auth::routes();
 
