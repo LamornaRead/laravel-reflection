@@ -21,11 +21,9 @@
             <div class="company-info-bottom">
                 <h2>Employees</h2>
                 <ul>
-                    <li>random</li>
-                    <li>random</li>
-                    <li>random</li>
-                    <li>random</li>
-                    <li>random</li>
+                    @foreach($company->employees as $em)
+                      <li>{{ $em->first_name }} {{ $em->last_name}}</li>
+                    @endforeach
                 </ul>
             </div>
         </div>
