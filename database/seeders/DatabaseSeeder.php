@@ -38,7 +38,17 @@ class DatabaseSeeder extends Seeder
        Employee::factory(5)->create(['company_id' => '8']);
        Employee::factory(2)->create(['company_id' => '9']);
        Employee::factory(2)->create(['company_id' => '10']);
+       Employee::factory(5)->create(['company_id' => '11']);
+       Employee::factory(3)->create(['company_id' => '12']);
+       Employee::factory(2)->create(['company_id' => '13']);
+       Employee::factory(10)->create(['company_id' => '14']);
+       Employee::factory(6)->create(['company_id' => '15']);
+       Employee::factory(7)->create(['company_id' => '16']);
+       Employee::factory(3)->create(['company_id' => '17']);
+       Employee::factory(5)->create(['company_id' => '18']);
+       Employee::factory(2)->create(['company_id' => '19']);
+       Employee::factory(2)->create(['company_id' => '20']);
 
-       Company::factory(10)->create();
+       Company::factory(20)->create();
     }
 }
