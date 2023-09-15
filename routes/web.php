@@ -28,3 +28,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/create-company', [App\Http\Controllers\HomeController::class, 'createCompany'])->name('create-company');
 Route::get('/create-employee', [App\Http\Controllers\HomeController::class, 'createEmployee'])->name('create-employee');
+Route::get('/admin', [App\Http\Controllers\HomeController::class, 'allFiles'])->name('admin');

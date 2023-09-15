@@ -12,6 +12,9 @@
 .container-main {
     width: 70%;
     margin: auto;
+    @media (max-width: 576px ) {
+        width: 90%;
+    }
 }
 
 .container-inner {
@@ -222,4 +225,33 @@
     border-radius: 5px;
     width: 200px;
     margin: auto;
+}
+
+//admin file management page
+
+.company-list {
+    @extend %card-block;
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    padding: 10px 20px;
+    margin: 20px auto;
+}
+.list-name {
+    margin: 0;
+    font-size: 1rem;
+    padding: 2px 0;
+    @media (max-width: 576px ) {
+        font-size: .8rem;
+    }
+}
+
+.list-link {
+    @extend %btn;
+    font-size: .8rem;
+    padding: 5px 10px;
+    border-radius: 3px;
+    @media (max-width: 576px ) {
+        font-size: .6rem;
+    }
 }

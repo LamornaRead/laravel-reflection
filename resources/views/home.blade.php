@@ -51,7 +51,7 @@
             </div> 
 
             <div>
-                <a class="company-button create-button" href="#">View</a>
+                <a class="company-button create-button" href="/admin">View</a>
             </div>   
         </div>
     </div>
