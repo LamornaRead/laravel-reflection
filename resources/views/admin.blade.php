@@ -12,7 +12,7 @@
     @foreach ($companies as $company)
         <div class="company-list">
             <p class="list-name">{{ $company->name }}</p>
-            <a class="list-link" href="">Edit</a>
+            <a class="list-link" href="edit-files/{{ $company->name }}">Edit</a>
         </div>
     @endforeach  
 </div>

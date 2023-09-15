@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Employee;
 use Illuminate\Http\Request;
 use App\Models\Company;
+
 
 class HomeController extends Controller
 {
@@ -48,5 +50,12 @@ class HomeController extends Controller
             abort(403);
         }
         return view('admin' , ['companies' => Company::all()]);
+    }
+
+    public function editFIles() {
+        if(auth()->guest()) {
+            abort(403);
+        }
+        return view('edit-files', ['companies' => Company::all()]);
     }
 }

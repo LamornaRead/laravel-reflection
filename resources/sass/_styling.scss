@@ -255,3 +255,43 @@
         font-size: .6rem;
     }
 }
+
+// admin file edit page 
+
+.file-info-con {
+    @extend %card-block;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+.file-info-top {
+    display: flex;
+    @media (max-width: 576px){
+        flex-direction: column;
+    }
+}
+
+.file-info-list {
+    margin-top: 15px;
+}
+.file-info-img {
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.file-btn-con {
+    padding-top: 15px;
+}
+.file-btn {
+    @extend %btn;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.file-info-bottom {
+    @extend %card-block;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 15px 0;
+}
