@@ -12,3 +12,14 @@
     width: 100%;
     margin: 20px auto;
 }
+
+%btn {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #de681f;
+    &:hover {
+        background-color: darken($color: #de681f, $amount: 5%);
+    }
+}

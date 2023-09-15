@@ -17,7 +17,7 @@
             <div class="company-card-img">
                 <img class="company-img" src="{{ $company->image }}" alt="random image">
             </div>
-            <a class="company-button" href="/company/{{ $company->id }}">View More</a>
+                <a class="company-button" href="/company/{{ $company->name }}">View More</a>
             </div>
 
             @endforeach      

@@ -22,7 +22,7 @@
                 <h2 class="emp-header">Employees <i class="fa-solid fa-user-group"></i></h2>
                 <ul class="emp-ul">
                     @foreach($company->employees as $em)
-                      <li class="emp-list">{{ $em->first_name }} {{ $em->last_name}} <a class="emp-button" href="/employee/{{ $em->first_name }}">View Info</a></li>
+                      <li class="emp-list">{{ $em->first_name }} {{ $em->last_name}}</li>
                     @endforeach
                 </ul>
             </div>

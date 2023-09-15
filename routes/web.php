@@ -19,13 +19,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () { return view('companies', ['companies' => Company::all()]);});
 
 //a single view for a single company
-//need to add a connection to a list of employees for that single company
-Route::get('company/{company:id}', function (Company $company) {  return view('company', [ 'company' => $company]);});
+Route::get('company/{company:name}', function (Company $company) {  return view('company', [ 'company' => $company]);});
 
-//employee information
-Route::get('employee/{employee:first_name}', function (Employee $employee) { return view('employee', ['employee' => $employee]);} );
 
 Auth::routes();
 
 //admin access to a dashboard that only admins can see
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/create-company', [App\Http\Controllers\HomeController::class, 'createCompany'])->name('create-company');
+Route::get('/create-employee', [App\Http\Controllers\HomeController::class, 'createEmployee'])->name('create-employee');

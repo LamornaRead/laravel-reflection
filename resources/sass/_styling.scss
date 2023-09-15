@@ -52,18 +52,11 @@
 
 
 .company-button {
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    background-color: #de681f;
+    @extend %btn;
     width: 40%;
     padding: 10px 15px;
     margin: 20px auto;
     border-radius: 10px;
-    &:hover {
-        background-color: darken($color: #de681f, $amount: 5%);
-    }
 }
 
 //company view page
@@ -129,24 +122,11 @@
     padding-left: 0;
 }
 .emp-list{
-    display: flex;
-    justify-content: space-between;
     font-size: 1.1rem;
     margin: 20px 0;
     padding: 10px;
     background-color: lightgrey;
     border-radius: 5px;
-}
-.emp-button {
-    color: white;
-    font-size: 0.8rem;
-    text-decoration: none;
-    background-color: #de681f;
-    padding: 5px;
-    border-radius: 5px;
-    &:hover {
-        background-color: darken($color: #de681f, $amount: 5%);
-    }
 }
 
 //admin dashboard page
@@ -172,4 +152,74 @@
 
 .create-button {
     font-size: .8rem;
+}
+
+//create company form
+
+.form-header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.form-card {
+    @extend %card-block;
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    @media (min-width: 576px) {
+        padding: 40px;
+    }
+
+}
+.form-layout{
+    width: 100%;
+}
+
+.form-input-con{
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+}
+
+.form-label {
+    font-size: 1rem;
+}
+
+.form-input {
+    border-radius: 5px;
+    border: 1px solid grey;
+    outline: none;
+    height: 40px;
+    padding-left: 10px;
+}
+
+.form-input:focus {
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    border: 1px solid rgba(81, 203, 238, 1);
+}
+
+.form-btn {
+    @extend %btn;
+    border: none;
+    width: 100px;
+    padding: 5px 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.dash-btn-con {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+.dashboard-btn {
+    @extend %btn;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 200px;
+    margin: auto;
 }

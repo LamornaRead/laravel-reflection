@@ -31,17 +31,17 @@
             </div> 
 
             <div>
-                <a class="company-button create-button" href="#">Create</a>
+                <a class="company-button create-button" href="/create-company">Create</a>
             </div>   
         </div>
 
         <div class="create-card">
             <div>
-                <h4 class="create-card-header">Add Employee Files</h4>
+                <h4 class="create-card-header">Create Employee File</h4>
             </div> 
 
             <div>
-                <a class="company-button create-button" href="#">Create</a>
+                <a class="company-button create-button" href="/create-employee">Create</a>
             </div>   
         </div>
 

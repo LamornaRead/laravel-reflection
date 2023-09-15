@@ -28,4 +28,18 @@ class HomeController extends Controller
         }
         return view('home');
     }
+
+    public function createCompany() {
+        if(auth()->guest()) {
+            abort(403);
+        }
+        return view('create-company');
+    }
+
+    public function createEmployee() {
+        if(auth()->guest()) {
+            abort(403);
+        }
+        return view('create-employee');
+    }
 }
