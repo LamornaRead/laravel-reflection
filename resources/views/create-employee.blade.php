@@ -25,7 +25,11 @@
                 <div class="form-input-con">
                     <label class="form-label" for="company-name">Company Name <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></label>
                     <!-- <input class="form-input" id="company-name" name="company-name" type="text"> -->
-                    <select class="form-input" name="company-name" id="company-name"></select>
+                    <select class="form-input" name="company-name" id="company-name">
+                        @foreach ($companies as $company)
+                           <option value="">{{ $company->name }}</option>
+                        @endforeach
+                    </select>
                 </div>
 
                 <div class="form-input-con">

@@ -16,10 +16,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 //landing page showing all companies
-Route::get('/', function () { return view('companies', ['companies' => Company::all()]);});
+Route::get('/', function () { 
+    return view('companies', [
+        'companies' => Company::all()
+    ]);
+});
 
 //a single view for a single company
-Route::get('company/{company:name}', function (Company $company) {  return view('company', [ 'company' => $company]);});
+Route::get('company/{company:name}', function (Company $company) {
+      return view('company', [
+         'company' => $company
+    ]);
+});
 
 
 Auth::routes();

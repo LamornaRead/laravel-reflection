@@ -43,8 +43,9 @@ class HomeController extends Controller
         if(auth()->guest()) {
             abort(403);
         }
-        return view('create-employee');
+        return view('create-employee' , ['companies' => Company::all()]);
     }
+    
     public function allFiles() {
         if(auth()->guest()) {
             abort(403);
