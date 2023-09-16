@@ -1,6 +1,5 @@
-@extends('layouts.app')
-
-@section('content')
+<x-app>
+    
     <div class="container-main">
         <div class="info-container">
             <div class="button-container">
@@ -29,4 +28,4 @@
         </div>
     </div>
 
-@endsection
+</x-app>

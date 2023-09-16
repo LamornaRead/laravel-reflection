@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CompanyController;
 use App\Models\Company;
 use App\Models\Employee;
 use Illuminate\Support\Facades\Route;
@@ -16,18 +17,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 //landing page showing all companies
-Route::get('/', function () { 
-    return view('companies', [
-        'companies' => Company::all()
-    ]);
-});
+Route::get('/', [CompanyController::class, 'index']);
 
 //a single view for a single company
-Route::get('company/{company:name}', function (Company $company) {
-      return view('company', [
-         'company' => $company
-    ]);
-});
+Route::get('company/{company:name}', [CompanyController::class, 'show']);
 
 
 Auth::routes();

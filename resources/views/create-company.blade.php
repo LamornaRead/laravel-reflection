@@ -1,7 +1,6 @@
-@extends('layouts.app')
-
-@section('content')
-     <div>
+<x-app>
+    
+    <div>
         <h2 class="form-header">Create Company File</h2>
         <div class="dash-btn-con">
             <a class="dashboard-btn" href="/home">Back To Dashboard</a>
@@ -39,4 +38,6 @@
             </form>
         </div>
      </div>
-@endsection
+
+</x-app>
+
