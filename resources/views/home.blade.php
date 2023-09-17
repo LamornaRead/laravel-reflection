@@ -20,38 +20,33 @@
             </div>
         </div>
         
-        <div class="border-t border-gray-400">
-            <x-header name='Admin Page'></x-header>
+        <div class="border-t border-gray-400 mt-10">
+            <x-header class="mt-8" name='Admin Page'></x-header>
 
-            <div class="create-card">
+            <x-company-card class="w-9/12 mx-auto p-4 flex justify-between mb-8">
                 <div>
-                    <h4 class="create-card-header">Create Company Files</h4>
+                    <h4 class="m-0">Create Company Files</h4>
                 </div> 
 
-                <div>
-                    <a class="company-button create-button" href="/create-company">Create</a>
-                </div>   
-            </div>
+                <x-button class="px-4" name='create' link='/create-company'></x-button>
+            </x-company-card>
 
-            <div class="create-card">
+            <x-company-card class="w-9/12 mx-auto p-4 flex justify-between mb-8">
                 <div>
-                    <h4 class="create-card-header">Create Employee File</h4>
+                    <h4 class="m-0">Create Employee File</h4>
                 </div> 
 
-                <div>
-                    <a class="company-button create-button" href="/create-employee">Create</a>
-                </div>   
-            </div>
+                <x-button class="px-4" name='create' link='/create-employee'></x-button>
+            </x-company-card>
 
-            <div class="create-card">
+            <x-company-card class="w-9/12 mx-auto p-4 flex justify-between mb-8">
                 <div>
-                    <h4 class="create-card-header">View All Company Files</h4>
+                    <h4 class="m-0">View All Company Files</h4>
                 </div> 
+                
+                <x-button class="px-4" name='View' link='/admin'></x-button>
+            </x-company-card>
 
-                <div>
-                    <a class="company-button create-button" href="/admin">View</a>
-                </div>   
-            </div>
         </div>
         
     </x-container-main>
