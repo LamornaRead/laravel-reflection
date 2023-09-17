@@ -1,5 +1,5 @@
 
-<div class="company-card">
+<div {{ $attributes->merge(['class' => 'border-1 border-gray-400 rounded-2xl shadow']) }}>
 {{ $slot }}
 </div>
      

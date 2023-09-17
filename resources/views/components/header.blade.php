@@ -1,3 +1,4 @@
-<div class="header">
-        <h1>Company Management Service</h1>
+@props(['name'])
+<div class="text-center mt-6 mb-16">
+        <h1>{{ $name }}</h1>
 </div>

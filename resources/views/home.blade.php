@@ -20,10 +20,8 @@
             </div>
         </div>
         
-        <div class="admin-dashboard">
-            <div class="header">
-                <h3>Admin Page</h3>
-            </div>
+        <div class="border-t border-gray-400">
+            <x-header name='Admin Page'></x-header>
 
             <div class="create-card">
                 <div>

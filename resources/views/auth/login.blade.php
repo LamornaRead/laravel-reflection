@@ -1,10 +1,7 @@
-@extends('layouts.app')
-
-@section('content')
+<x-app>
 <div class="container">
-    <div class="header">
-        <h1>Admin Login</h1>
-    </div>
+    <x-header name='Admin Login'></x-header>
+    
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -67,4 +64,6 @@
         </div>
     </div>
 </div>
-@endsection
+</x-app>
+
+

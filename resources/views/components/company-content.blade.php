@@ -1,9 +1,11 @@
 @props(['company'])
 
-<div class="company-card-header">
-    <h3>{{ $company->name }}</h3>
+<div class="text-center py-3 border-b border-gray-400">
+    <h3 class="text-lg m-0">{{ $company->name }}</h3>
 </div>
-<div class="company-card-img">
-    <img class="company-img" src="{{ $company->image }}" alt="random image">
+<div class="flex justify-items-center mx-auto py-8">
+    <img class="rounded-lg" src="{{ $company->image }}" alt="random image">
 </div>
-<a class="company-button" href="/company/{{ $company->name }}">View More</a>
+<x-button  name='View More' link='/company/{{ $company->name }}' class="w-24 my-3 mx-auto">
+    
+</x-button>
