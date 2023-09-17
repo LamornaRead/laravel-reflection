@@ -1,28 +1,22 @@
 <x-app>
 
-    <div class="header">
-        <h1>Company Management Service</h1>
-    </div>
+    <x-header></x-header>
 
-    <div class="container-main">
-        <div class="container-inner">
-           
-            @foreach ($companies as $company)
-
-            <div class="company-card">
-                <div class="company-card-header">
-                <h3>{{ $company->name }}</h3>
-            </div>
-            <div class="company-card-img">
-                <img class="company-img" src="{{ $company->image }}" alt="random image">
-            </div>
-                <a class="company-button" href="/company/{{ $company->name }}">View More</a>
-            </div>
-
-            @endforeach      
-
+    <x-container-main>
+        <div class="grid grid-cols-1 gap-8  md:grid-cols-2 lg:grid-cols-3">
+            
+            @foreach($companies as $company)
+            <x-company-card>
+                <x-company-content :company="$company"></x-company-content>
+            </x-company-card>
+            @endforeach
+    
         </div>
 
-    </div>
+        <div class="page-links">
+                {{ $companies->links() }}
+        </div>
+    </x-container-main>
+
     
 </x-app>

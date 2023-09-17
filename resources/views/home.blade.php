@@ -1,6 +1,7 @@
 <x-app>
 
-    <div class="container-main">
+    <x-container-main>
+
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
@@ -54,9 +55,8 @@
                 </div>   
             </div>
         </div>
-
-    </div>
-
+        
+    </x-container-main>
 
 </x-app>
 

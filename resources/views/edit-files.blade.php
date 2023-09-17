@@ -1,6 +1,6 @@
 <x-app>
+    <x-container-main>
 
-    <div class="container-main">
         <div>
             <h2 class="form-header">{{ $company->name }}</h2>
             <div class="dash-btn-con">
@@ -41,6 +41,6 @@
             </div>
         @endforeach
         </div>
-    </div>
+    </x-container-main>
 
 </x-app>

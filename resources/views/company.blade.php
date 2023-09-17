@@ -1,6 +1,6 @@
 <x-app>
     
-    <div class="container-main">
+    <x-container-main>
         <div class="info-container">
             <div class="button-container">
                 <a class="company-button" href="/"><i class="fa-solid fa-arrow-left"></i> Go back</a>
@@ -21,11 +21,12 @@
                 <h2 class="emp-header">Employees <i class="fa-solid fa-user-group"></i></h2>
                 <ul class="emp-ul">
                     @foreach($company->employees as $em)
-                      <li class="emp-list">{{ $em->first_name }} {{ $em->last_name}}</li>
+                    <li class="emp-list">{{ $em->first_name }} {{ $em->last_name}}</li>
                     @endforeach
                 </ul>
             </div>
         </div>
-    </div>
+    </x-container-main>
+
 
 </x-app>

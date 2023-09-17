@@ -7,7 +7,7 @@
         </div>
      </div>
      
-     <div class="container-main">
+     <x-container-main>
         <div class="form-card">
             <form class="form-layout" action="">
                 
@@ -47,7 +47,7 @@
 
             </form>
         </div>
-     </div>
+     </x-container-main>
 
 </x-app>
 

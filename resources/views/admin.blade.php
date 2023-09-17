@@ -6,14 +6,15 @@
             <a class="dashboard-btn" href="/home">Back To Dashboard</a>
         </div>
     </div>
-    <div class="container-main">
+
+    <x-container-main>
         @foreach ($companies as $company)
             <div class="company-list">
                 <p class="list-name">{{ $company->name }}</p>
                 <a class="list-link" href="edit-files/{{ $company->name }}">Edit</a>
             </div>
         @endforeach  
-    </div>
+    </x-container-main>
 
 </x-app>
 
