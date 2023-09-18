@@ -1,52 +1,50 @@
 <x-app>
 
-    <div>
-        <h2 class="form-header">Create Employee File</h2>
-        <div class="dash-btn-con">
-            <a class="dashboard-btn" href="/home">Back To Dashboard</a>
+    <div class="mt-8">
+        <x-header class="text-3xl mb-4" name='Create Employee File'></x-header>
+        <div class="flex justify-center mb-10">
+            <x-button class="w-56 text-base" link='/home' name='Back To Dashboard'></x-button>
         </div>
      </div>
      
      <x-container-main>
-        <div class="form-card">
-            <form class="form-layout" action="">
-                
-                <div class="form-input-con"> 
-                    <label class="form-label" for="first-name">Employee First Name <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></label>
-                    <input class="form-input" id="first-name" name="first-name" type="text">
-                </div>
+        <x-company-card class=" w-6/12 mx-auto p-8">
+            <form action="">
+                <x-input-container>
+                    <x-label for='first-name' name='Employee First Name <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i>'></x-label> 
+                    <x-input class="mt-2 h-10" id='first-name' name='first-name' type='text'></x-input>
+                </x-input-container>
 
-                <div class="form-input-con"> 
-                    <label class="form-label" for="last-name">Employee Last Name <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></label>
-                    <input class="form-input" id="last-name" name="last-name" type="text">
-                </div>
+                <x-input-container>
+                    <x-label for='last-name' name='Employee Last Name <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i>'></x-label> 
+                    <x-input class="mt-2 h-10" id='last-name' name='last-name' type='text'></x-input>
+                </x-input-container>
 
-                <div class="form-input-con">
-                    <label class="form-label" for="company-name">Company Name <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></label>
-                    <!-- <input class="form-input" id="company-name" name="company-name" type="text"> -->
-                    <select class="form-input" name="company-name" id="company-name">
+                <x-input-container>
+                    <x-label for='company-name' name='Company Name <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i>'></x-label>
+                    <x-select class="mt-2 h-10" name='company-name' id='company-name'>
                         @foreach ($companies as $company)
                            <option value="">{{ $company->name }}</option>
                         @endforeach
-                    </select>
-                </div>
+                    </x-select> 
+                </x-input-container>
 
-                <div class="form-input-con">
-                    <label class="form-label" for="email">Employee Email <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></label>
-                    <input class="form-input" id="email" name="email" type="email">
-                </div>
+                <x-input-container>
+                    <x-label for='email' name='Employee Email <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i>'></x-label> 
+                    <x-input class="mt-2 h-10" id='email' name='email' type='email'></x-input>
+                </x-input-container>
 
-                <div class="form-input-con">
-                    <label class="form-label" for="website">Employee Telephone <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></label>
-                    <input class="form-input" id="website" name="website" type="tel">
-                </div>
+                <x-input-container>
+                    <x-label for='telephone' name='Employee Telephone <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i>'></x-label> 
+                    <x-input class="mt-2 h-10" id='telephone' name='telephone' type='tel'></x-input>
+                </x-input-container>
 
-                <div class="form-input-con">
-                    <input class="form-btn" type="button" value="Submit">
-                </div>
+                <x-input-container>
+                    <x-input-button class='text-base w-32' value='submit'></x-input-button>
+                </x-input-container>
 
             </form>
-        </div>
+        </x-company-card>
      </x-container-main>
 
 </x-app>

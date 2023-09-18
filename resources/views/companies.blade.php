@@ -20,19 +20,26 @@
 
         <x-company-card class='p-6 col-span-2 h-100'>
             <x-header class="text-2xl my-0" name='Contact Us'></x-header>
-            <form class="flex flex-col mt-8" action="">
-                
-                <x-label for='name' name='Fullname'></x-label>
-                <x-input id='name' name='name' type='text'></x-input>
+            <form  action="">
+                <x-input-container>
+                    <x-label for='name' name='Fullname'></x-label>
+                    <x-input id='name' name='name' type='text'></x-input>
+                </x-input-container>
 
-                <x-label for='email' name='Your email'></x-label>
-                <x-input id='email' name='email' type='email'></x-input>
-                
+                <x-input-container>
+                    <x-label for='email' name='Your email'></x-label>
+                    <x-input id='email' name='email' type='email'></x-input>
+                </x-input-container>
 
-                <x-label for='message' name='Your message'></x-label>
-                <x-textarea id='message' name='message' rows='5'></x-textarea>
-                
-                <x-input-button value='send'></x-input-button>
+                <x-input-container>
+                    <x-label for='message' name='Your message'></x-label>
+                    <x-textarea id='message' name='message' rows='5'></x-textarea>
+                </x-input-container>
+
+                <x-input-container>
+                    <x-input-button value='send'></x-input-button>
+                </x-input-container>
+
             </form>
         </x-company-card>
     </div>
