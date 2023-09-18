@@ -16,19 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//landing page showing all companies
-Route::get('/', [CompanyController::class, 'index']);
-
-//a single view for a single company
-Route::get('company/{company:name}', [CompanyController::class, 'show']);
-
+//landing page for public
+Route::get('/', [CompanyController::class, 'public']);
 
 Auth::routes();
 
 //admin access to a dashboard that only admins can see
 
 //admin dashboard
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [CompanyController::class, 'index'])->middleware('auth');
 
 //create company form
 Route::get('create-company', [CompanyController::class, 'create'])->middleware('auth');
@@ -36,9 +32,8 @@ Route::get('create-company', [CompanyController::class, 'create'])->middleware('
 //create employee form
 Route::get('create-employee', [EmployeeController::class, 'create'])->middleware('auth');
 
-//see all company files page
-Route::get('/admin', [HomeController::class, 'allFiles'])->name('admin');
 
 //see company edit page
-Route::get('edit-files/{company:name}', [HomeController::class, 'edit'])->middleware('auth');
+Route::get('company/{company:name}', [CompanyController::class, 'show'])->middleware('auth');
+
 

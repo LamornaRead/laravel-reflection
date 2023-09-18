@@ -10,9 +10,17 @@ class CompanyController extends Controller
 {
     //
 
+    public function public()
+    {
+        return view('companies');
+    }
+
     public function index()
     {
-        return view('companies', [
+        if(auth()->guest()) {
+            abort(403);
+        }
+        return view('home', [
             'companies' => Company::orderBy('name')->paginate(9)
         ]);
     }
@@ -28,4 +36,5 @@ class CompanyController extends Controller
             'companies' => Company::all()
         ]);
     }
+
 }

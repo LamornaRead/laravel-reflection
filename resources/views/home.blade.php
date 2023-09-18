@@ -1,6 +1,6 @@
 <x-app>
 
-    <x-container-main>
+    <x-container-main class="py-8">
 
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -19,33 +19,30 @@
                 </div>
             </div>
         </div>
-        
+
+
+
         <div class="border-t border-gray-400 mt-10">
             <x-header class="mt-8" name='Admin Page'></x-header>
+        @if($companies->count())
 
-            <x-company-card class="w-9/12 mx-auto p-4 flex justify-between mb-8">
-                <div>
-                    <h4 class="m-0">Create Company Files</h4>
-                </div> 
+        <div class="grid grid-cols-1 gap-8  md:grid-cols-2 lg:grid-cols-3">
+        @foreach($companies as $company)
+        <x-company-card class="flex flex-col">
+            <x-company-content :company="$company"></x-company-content>
+        </x-company-card>
 
-                <x-button class="px-4" name='create' link='/create-company'></x-button>
-            </x-company-card>
+        @endforeach
+    
+        </div>
 
-            <x-company-card class="w-9/12 mx-auto p-4 flex justify-between mb-8">
-                <div>
-                    <h4 class="m-0">Create Employee File</h4>
-                </div> 
-
-                <x-button class="px-4" name='create' link='/create-employee'></x-button>
-            </x-company-card>
-
-            <x-company-card class="w-9/12 mx-auto p-4 flex justify-between mb-8">
-                <div>
-                    <h4 class="m-0">View All Company Files</h4>
-                </div> 
-                
-                <x-button class="px-4" name='View' link='/admin'></x-button>
-            </x-company-card>
+        <div class="pt-24">
+                {{ $companies->links() }}
+        </div>
+        @else
+        <p class="text-xl sm:text-2xl text-center uppercase tracking-widest mt-24 sm:mt-56">No companies have been added yet</p>
+        <p class="text-xl sm:text-2xl text-center uppercase tracking-widest">Come Back Later</p>
+        @endif
 
         </div>
         

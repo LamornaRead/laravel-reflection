@@ -1,30 +1,46 @@
 <x-app>
-    
-    <x-container-main class="mt-10">
-            <x-button class="text-lg rounded-xl px-4" link='/' name='<i class="fa-solid fa-arrow-left"></i> Go back'></x-button>
+    <x-container-main>
 
-            <x-company-card class="max-w-2xl mx-auto p-4 sm:flex w-full mb-8 mt-16">
-                <div class="flex justify-items-center sm:mr-8">
-                    <img class="max-w-sm min-w-0 w-full rounded-xl" src="{{ $company->image }}" alt="random image">
-                </div>
-                
+        <div>
+            <h2 class="form-header">{{ $company->name }}</h2>
+            <div class="dash-btn-con">
+                <a class="dashboard-btn" href="/home">Back</a>
+            </div>
+        </div>
+        <div class="file-info-con">
+            <div class="file-info-top">
                 <div>
-                    <h2 class="mb-10 mt-8 sm:mt-0">{{ $company->name }}</h2>
-                    <p><strong>Email :</strong> {{ $company->email }}</p>
-                    <p><strong>Website :</strong> {{ $company->website }}</p>
+                    <img class="file-info-img" src="{{ $company->image }}" alt="company logo">
                 </div>
-            </x-company-card>
+                <div class="file-info-list">
+                    <p><strong>Company Name :</strong> {{ $company->name }}</p>
+                    <p><strong>Company Email :</strong> {{ $company->email }}</p>
+                    <p><strong>Company Website :</strong> {{ $company->website }}</p>
+                    <div class="file-btn-con">
+                        <a class="file-btn" href="">edit</a>
+                        <a class="file-btn" href="">delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <x-company-card class="max-w-2xl mx-auto p-4  w-full mb-8">
-                <h2 class="border-b border-gray-400 pb-4">Employees <i class="fa-solid fa-user-group"></i></h2>
-                <ul class="list-none pl-0">
-                    @foreach($company->employees as $em)
-                    <li class="text-lg my-8 bg-gray-500 p-3 rounded-lg">{{ $em->first_name }} {{ $em->last_name}}</li>
-                    @endforeach
-                </ul>
-            </x-company-card>
-
+        <div class="file-info-con">
+            <h4>Employees</h4>
+        @foreach($company->employees as $em)
+            <div class="file-info-bottom">
+                <div>
+                    <p><strong>First Name :</strong> {{ $em->first_name }}</p>
+                    <p><strong>Last Name :</strong> {{ $em->last_name }}</p>
+                    <p><strong>Email :</strong> {{ $em->email }}</p>
+                    <p><strong>Telephone :</strong> {{ $em->phone_number }}</p>
+                </div>
+                <div class="">
+                        <a class="file-btn" href="">edit</a>
+                        <a class="file-btn" href="">delete</a>
+                    </div>
+            </div>
+        @endforeach
+        </div>
     </x-container-main>
-
 
 </x-app>
