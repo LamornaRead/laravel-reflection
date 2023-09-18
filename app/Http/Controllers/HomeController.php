@@ -50,7 +50,7 @@ class HomeController extends Controller
         if(auth()->guest()) {
             abort(403);
         }
-        return view('admin' , ['companies' => Company::all()]);
+        return view('admin' , ['companies' => Company::orderBy('name')->paginate(10)]);
     }
 
     public function editFIles() {

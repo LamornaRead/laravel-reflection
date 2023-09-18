@@ -14,7 +14,11 @@
                 <a class="list-link" href="edit-files/{{ $company->name }}">Edit</a>
             </div>
         @endforeach  
+        <div class="pt-16">
+            {{ $companies->links() }}
+        </div>
     </x-container-main>
+
 
 </x-app>
 
