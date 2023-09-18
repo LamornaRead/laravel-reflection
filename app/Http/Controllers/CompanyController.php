@@ -22,4 +22,10 @@ class CompanyController extends Controller
             'company' => $company
        ]);
     }
+
+    public function create() {
+        return view('create-company', [
+            'companies' => Company::all()
+        ]);
+    }
 }

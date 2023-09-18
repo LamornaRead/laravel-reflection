@@ -32,19 +32,7 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function createCompany() {
-        if(auth()->guest()) {
-            abort(403);
-        }
-        return view('create-company');
-    }
 
-    public function createEmployee() {
-        if(auth()->guest()) {
-            abort(403);
-        }
-        return view('create-employee' , ['companies' => Company::all()]);
-    }
     
     public function allFiles() {
         if(auth()->guest()) {
@@ -53,10 +41,10 @@ class HomeController extends Controller
         return view('admin' , ['companies' => Company::orderBy('name')->paginate(10)]);
     }
 
-    public function editFIles() {
+    public function edit(Company $company) {
         if(auth()->guest()) {
             abort(403);
         }
-        return view('edit-files', ['companies' => Company::all()]);
+        return view('edit-files', ['company' => $company]);
     }
 }

@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\HomeController;
 use App\Models\Company;
 use App\Models\Employee;
 use Illuminate\Support\Facades\Route;
@@ -29,7 +31,16 @@ Auth::routes();
 
 //admin dashboard
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/create-company', [App\Http\Controllers\HomeController::class, 'createCompany'])->name('create-company');
-Route::get('/create-employee', [App\Http\Controllers\HomeController::class, 'createEmployee'])->name('create-employee');
-Route::get('/admin', [App\Http\Controllers\HomeController::class, 'allFiles'])->name('admin');
-Route::get('edit-files/{company:name}', function (Company $company) {  return view('edit-files', [ 'company' => $company]);})->middleware('auth');
+
+//create company form
+Route::get('create-company', [CompanyController::class, 'create'])->middleware('auth');
+
+//create employee form
+Route::get('create-employee', [EmployeeController::class, 'create'])->middleware('auth');
+
+//see all company files page
+Route::get('/admin', [HomeController::class, 'allFiles'])->name('admin');
+
+//see company edit page
+Route::get('edit-files/{company:name}', [HomeController::class, 'edit'])->middleware('auth');
+
