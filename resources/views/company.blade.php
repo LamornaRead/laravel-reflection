@@ -1,5 +1,5 @@
 <x-app>
-    <x-container-main>
+    <x-container-main class="mb-10">
 
         <div class="mt-10">
             <x-header class="mb-6" name='{{ $company->name }}'></x-header>
@@ -7,6 +7,7 @@
                 <x-button class="w-56 text-base" link='/home' name='Back To Dashboard'></x-button>
             </div>
         </div>
+
         <x-company-card class="lg:w-9/12 mx-auto p-4 mb-6">
             <div class="md:flex">
                 <div class="md:mr-4">
@@ -24,7 +25,8 @@
             </div>
         </x-company-card>
 
-        <x-company-card class="lg:w-9/12 mx-auto p-4">
+        @if($employees->count()) 
+            <x-company-card class="lg:w-9/12 mx-auto p-4">
             <h4 class="text-3xl pb-6">Employees</h4>
 
             @foreach($company->employees as $em)
@@ -42,6 +44,11 @@
                 </div>
             @endforeach
         </x-company-card>
+        @else 
+            <p>There are no employees added to this company yet.</p>
+        
+       @endif
+
 
     </x-container-main>
 

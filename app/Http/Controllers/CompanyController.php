@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Company;
+use App\Models\Employee;
 use Illuminate\Http\Request;
 
 class CompanyController extends Controller
@@ -20,9 +21,10 @@ class CompanyController extends Controller
         ]);
     }
 
-    public function show(Company $company) {
+    public function show(Company $company, Employee $employees) {
         return view('company', [
-            'company' => $company
+            'company' => $company,
+            'employees' => Employee::all()
        ]);
     }
 
