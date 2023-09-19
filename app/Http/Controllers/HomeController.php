@@ -18,16 +18,17 @@ class HomeController extends Controller
     //send a message to the buisness
     public function store()
     {
-        //send message
         // return request()->all();
 
         $attributes = request()->validate([
-            'name' => ['required', 'max:10'],
+            'name' => ['required', 'min:3', 'max:255'],
             'email' => ['required', 'email', 'max:255'],
             'comment' => ['required']
         ]);
 
         Message::create($attributes);
+
+        session()->flash('success', 'Message Success');
 
         return redirect('/');
 

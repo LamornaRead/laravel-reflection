@@ -51,6 +51,14 @@
                     <x-input-button value='send' type="submit"></x-input-button>
                 </x-input-container>
 
+                @if(session()->has('success'))
+
+                    <x-input-container>
+                        <p class="text-center text-white bg-green-500 w-40 py-2 px-3 mx-auto rounded">{{ session('success') }}</p>
+                    </x-input-container>
+
+                @endif
+
             </form>
         </x-company-card>
     </div>
