@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('company_id');
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('company');
+            // $table->string('company');
             $table->string('email')->unique();
             $table->string('phone_number');
             $table->timestamps();

@@ -49,6 +49,6 @@ class DatabaseSeeder extends Seeder
     //    Employee::factory(2)->create(['company_id' => '19']);
     //    Employee::factory(2)->create(['company_id' => '20']);
 
-    //    Company::factory(20)->create();
+       Company::factory(2)->create();
     }
 }

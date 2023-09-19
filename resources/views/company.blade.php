@@ -24,12 +24,12 @@
                 </div>
             </div>
         </x-company-card>
-
+        @foreach($company->employees as $em)
         @if($employees->count()) 
             <x-company-card class="lg:w-9/12 mx-auto p-4">
             <h4 class="text-3xl pb-6">Employees</h4>
 
-            @foreach($company->employees as $em)
+            
                 <div class="lg:grid lg:grid-cols-6 bg-gray-300 p-3 rounded border border-gray-400 mb-6">
                     <div class="col-span-3 xl:col-span-4">
                         <p><strong>First Name :</strong> {{ $em->first_name }}</p>
@@ -42,12 +42,12 @@
                         <x-button class="uppercase text-sm px-3" link='#' name='delete'></x-button>
                     </div>
                 </div>
-            @endforeach
         </x-company-card>
-        @else 
-            <p>There are no employees added to this company yet.</p>
         
        @endif
+       @endforeach
+      
+
 
 
     </x-container-main>

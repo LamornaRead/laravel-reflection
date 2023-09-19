@@ -29,9 +29,11 @@ Route::get('/home', [CompanyController::class, 'index'])->middleware('auth');
 
 //create company form
 Route::get('create-company', [CompanyController::class, 'create'])->middleware('auth');
+Route::post('create-company', [CompanyController::class, 'store'])->middleware('auth');
 
 //create employee form
 Route::get('create-employee', [EmployeeController::class, 'create'])->middleware('auth');
+Route::post('create-employee', [EmployeeController::class, 'store'])->middleware('auth');
 
 
 //see company edit page
