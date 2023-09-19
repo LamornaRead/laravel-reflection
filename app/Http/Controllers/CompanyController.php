@@ -10,11 +10,6 @@ class CompanyController extends Controller
 {
     //
 
-    public function public()
-    {
-        return view('companies');
-    }
-
     public function index()
     {
         if(auth()->guest()) {

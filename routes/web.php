@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 //landing page for public
-Route::get('/', [CompanyController::class, 'public']);
+Route::get('/', [HomeController::class, 'index']);
+Route::post('/', [HomeController::class, 'store']);
 
 Auth::routes();
 

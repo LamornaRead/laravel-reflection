@@ -16,4 +16,15 @@ class EmployeeController extends Controller
             'companies' => Company::all()
         ]);
     }
+
+    public function store()
+    {
+        //send message
+        return request()->all();
+        // request()->validate([
+        //     'name' => ['required', 'max:255'],
+        //     'email' => ['required', 'email', 'max:255'],
+        //     'message' => ['required']
+        // ]);
+    }
 }
