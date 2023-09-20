@@ -26,7 +26,7 @@
             <x-header class="mt-8" name='Admin Page'></x-header>
         @if($companies->count())
 
-        <div class="grid grid-cols-1 gap-8  md:grid-cols-2 lg:grid-cols-3">
+        <div class="grid grid-cols-1 gap-6  md:grid-cols-2 xl:grid-cols-4">
         @foreach($companies as $company)
         <x-company-card class="flex flex-col">
             <x-company-content :company="$company"></x-company-content>

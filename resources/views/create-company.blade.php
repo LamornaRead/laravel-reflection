@@ -9,7 +9,7 @@
      
      <x-container-main>
         <x-company-card class="w-6/12 mx-auto p-8">
-                <form method="POST" action="/create-company">
+                <form method="POST" action="/create-company" enctype="multipart/form-data">
                     @csrf
                 
                 <x-input-container>

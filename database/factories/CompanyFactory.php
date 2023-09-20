@@ -20,7 +20,7 @@ class CompanyFactory extends Factory
             'name' => fake()->company(),
             'email' => fake()->unique()->safeEmail(),
             'website' => fake()->unique()->url(),
-            'image'=>'https://picsum.photos/200'
+            'image'=>'thumbnails/place-holder-logo.jpg'
         ];
     }
 }

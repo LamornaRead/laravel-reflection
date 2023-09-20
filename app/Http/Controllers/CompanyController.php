@@ -17,7 +17,7 @@ class CompanyController extends Controller
             abort(403);
         }
         return view('home', [
-            'companies' => Company::orderBy('name')->paginate(9)
+            'companies' => Company::orderBy('name')->paginate(8)
         ]);
     }
 
@@ -38,13 +38,21 @@ class CompanyController extends Controller
 
     public function store()
     {
+
+        // $path = request()->file('image')->store('thumbnails');
+        // return 'done' . $path;
+        // ddd(request()->file('image'));
+        // return request()->all();
+
         $attributes = request()->validate([
             'name' => ['required', 'min:3', 'max:255'],
             'email' => ['required', 'email', 'max:255'],
             'website' => ['required', 'url'],
-            'image' => ['required', 'mimes:jpeg,png,jpg,gif']
+            'image' => ['required', 'image', 'dimensions:max_width=100,max_height=100']
 
         ]);
+
+        $attributes['image'] = request()->file('image')->store('thumbnails');
 
         Company::create($attributes);
 

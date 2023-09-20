@@ -11,9 +11,9 @@
         <x-company-card class="lg:w-9/12 mx-auto p-4 mb-6">
             <div class="md:flex">
                 <div class="md:mr-4">
-                    <img class="rounded-lg" src="{{ $company->image }}" alt="company logo">
+                    <img class="rounded-lg w-40" src="{{ asset('storage/' . $company->image) }}" alt="company logo">
                 </div>
-                <div class="mt-2">
+                <div class="mt-2 md:mt-0">
                     <p><strong>Company Name :</strong> {{ $company->name }}</p>
                     <p><strong>Company Email :</strong> {{ $company->email }}</p>
                     <p><strong>Company Website :</strong> {{ $company->website }}</p>

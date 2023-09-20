@@ -31,7 +31,7 @@
                     <x-label for='company_id' name='Company Name <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i>'></x-label>
                     <x-select class="mt-2 h-10" name='company_id' id='company_id' required>
                         @foreach ($companies as $company)
-                           <option value="{{ $company->id }}">{{ $company->name }}</option>
+                           <option value="{{ $company->id }}" {{ old('company_id') == $company->id ? 'selected' : ''}}>{{ $company->name }}</option>
                         @endforeach
                     </x-select> 
                 </x-input-container>
