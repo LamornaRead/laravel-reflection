@@ -61,4 +61,9 @@ class CompanyController extends Controller
         return redirect('/create-company');
     }
 
+    public function edit(Company $company) {
+        return view('edit-company', [
+            'company' => $company,
+       ]);
+    }
 }

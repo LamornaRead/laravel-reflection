@@ -18,7 +18,7 @@
                     <p><strong>Company Email :</strong> {{ $company->email }}</p>
                     <p><strong>Company Website :</strong> {{ $company->website }}</p>
                     <div>
-                        <x-button class="uppercase text-sm px-4" link='#' name='edit'></x-button>
+                        <x-button class="uppercase text-sm px-4" link='/edit-company/{{ $company->name }}' name='edit'></x-button>
                         <x-button class="uppercase text-sm px-3" link='#' name='delete'></x-button>
                     </div>
                 </div>

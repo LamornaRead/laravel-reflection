@@ -30,6 +30,7 @@ Route::get('/home', [CompanyController::class, 'index'])->middleware('auth');
 //create company form
 Route::get('create-company', [CompanyController::class, 'create'])->middleware('auth');
 Route::post('create-company', [CompanyController::class, 'store'])->middleware('auth');
+Route::get('edit-company/{company:name}', [CompanyController::class, 'edit'])->middleware('auth');
 
 //create employee form
 Route::get('create-employee', [EmployeeController::class, 'create'])->middleware('auth');
