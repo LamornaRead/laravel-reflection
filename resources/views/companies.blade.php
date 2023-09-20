@@ -23,39 +23,37 @@
             <form method="POST" action="/">
                 @csrf
                 
-                <x-input-container>
-                    <x-label for='name' name='Fullname'></x-label>
-                    <x-input id='name' name='name' type='text' value="{{ old('name') }}" required></x-input>
-                    @error('name')
-                        <p class="text-xs text-red-700 mb-0">{{ $message }}</p>
-                    @enderror
-                </x-input-container>
+                <x-form.field>
+                    <x-form.label for='name'>Fullname <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></x-form.label>
+                    <x-form.input name='name'></x-form.input>
+                </x-form.field>
 
-                <x-input-container>
-                    <x-label for='email' name='Your email'></x-label>
-                    <x-input id='email' name='email' type='email' value="{{ old('email') }}" required></x-input>
-                    @error('email')
-                        <p class="text-xs text-red-700 mb-0">{{ $message }}</p>
-                    @enderror
-                </x-input-container>
+                <x-form.field>
+                    <x-form.label for='email'>Your Email<i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></x-form.label>
+                    <x-form.input name='email' type='email'></x-form.input>
+                </x-form.field>
 
-                <x-input-container>
-                    <x-label for='comment' name='Your message'></x-label>
-                    <x-textarea id='comment' name='comment' rows='5' required>{{{ old('comment') }}}</x-textarea>
-                    @error('message')
-                        <p class="text-xs text-red-700 mb-0">{{ $message }}</p>
-                    @enderror
-                </x-input-container>
+                <x-form.field>
+                    <x-form.label for='email'>Your Email<i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></x-form.label>
+                    <x-form.input name='email' type='email'></x-form.input>
+                </x-form.field>
 
-                <x-input-container>
-                    <x-input-button value='send' type="submit"></x-input-button>
-                </x-input-container>
+                <x-form.field>
+                    <x-form.label for='comment'>Your Message <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></x-form.label>
+                    <x-form.textarea name='comment' rows='5'>{{{ old('comment') }}}</x-form.textarea>
+                </x-form.field>
+
+
+                <x-form.field>
+                    <x-form.button class='text-base w-32' name='Send'></x-form.button>
+                </x-form.field>
+
 
                 @if(session()->has('success'))
 
-                    <x-input-container>
-                        <p class="text-center text-white bg-green-500 w-40 py-2 px-3 mx-auto rounded">{{ session('success') }}</p>
-                    </x-input-container>
+                <x-form.field>
+                    <p class="text-center text-white bg-green-500 w-40 py-2 px-3 mx-auto rounded">{{ session('success') }}</p>
+                </x-form.field>
 
                 @endif
 
