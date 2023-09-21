@@ -36,6 +36,8 @@ Route::patch('edit-company/{company:id}', [CompanyController::class, 'update'])-
 //create employee form
 Route::get('create-employee', [EmployeeController::class, 'create'])->middleware('auth');
 Route::post('create-employee', [EmployeeController::class, 'store'])->middleware('auth');
+Route::get('edit-employee/{employee:id}', [EmployeeController::class, 'edit'])->middleware('auth');
+Route::patch('edit-employee/{employee:id}', [EmployeeController::class, 'update'])->middleware('auth');
 
 
 //see company edit page

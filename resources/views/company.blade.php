@@ -26,7 +26,7 @@
         </x-company-card>
         @foreach($company->employees as $em)
         @if($employees->count()) 
-            <x-company-card class="lg:w-9/12 mx-auto p-4">
+            <x-company-card class="lg:w-9/12 mx-auto p-4 mb-8">
             <h4 class="text-3xl pb-6">Employees</h4>
 
             
@@ -38,7 +38,7 @@
                         <p class="lg:mb-0"><strong>Telephone :</strong> {{ $em->phone_number }}</p>
                     </div>
                     <div class="col-span-3 xl:col-span-2 my-auto">
-                        <x-button class="uppercase text-sm px-4 lg:mr-3" link='#' name='edit'></x-button>
+                        <x-button class="uppercase text-sm px-4 lg:mr-3" link='/edit-employee/{{ $em->id }}' name='edit'></x-button>
                         <x-button class="uppercase text-sm px-3" link='#' name='delete'></x-button>
                     </div>
                 </div>
