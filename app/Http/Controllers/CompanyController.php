@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Company;
 use App\Models\Employee;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class CompanyController extends Controller
 {
@@ -46,10 +47,9 @@ class CompanyController extends Controller
 
         $attributes = request()->validate([
             'name' => ['required', 'min:3', 'max:255'],
-            'email' => ['required', 'email', 'max:255'],
-            'website' => ['required', 'url'],
+            'email' => ['required', 'email', 'max:255', Rule::unique('companies', 'email')],
+            'website' => ['required', 'url', Rule::unique('companies', 'website')],
             'image' => ['required', 'image', 'dimensions:max_width=100,max_height=100']
-
         ]);
 
         $attributes['image'] = request()->file('image')->store('thumbnails');
@@ -61,9 +61,29 @@ class CompanyController extends Controller
         return redirect('/create-company');
     }
 
-    public function edit(Company $company) {
+    public function edit(Company $company) 
+    {
         return view('edit-company', [
             'company' => $company,
        ]);
+    }
+
+    public function update(Company $company) 
+    {
+        $attributes = request()->validate([
+            'name' => ['required', 'min:3', 'max:255'],
+            'email' => ['required', 'email', 'max:255', Rule::unique('companies', 'email')->ignore($company->id)],
+            'website' => ['required', 'url', Rule::unique('companies', 'website')->ignore($company->id)],
+            'image' => ['image', 'dimensions:max_width=100,max_height=100']
+        ]);
+        
+        if(isset($attributes['image'])) {
+            $attributes['image'] = request()->file('image')->store('thumbnails');
+        }
+
+        $company->update($attributes);
+
+        return back()->with('success', 'File Updated');
+
     }
 }

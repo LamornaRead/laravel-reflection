@@ -8,7 +8,7 @@
      </div>
      
      <x-container-main>
-        <x-company-card class="w-6/12 mx-auto p-8">
+        <x-company-card class="lg:w-6/12 mx-auto p-8">
                 <form method="POST" action="/create-company" enctype="multipart/form-data">
                     @csrf
                 
