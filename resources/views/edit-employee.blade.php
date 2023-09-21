@@ -4,7 +4,7 @@
         <x-header class="text-3xl mb-4" name='{{ $employee->first_name }} {{ $employee->last_name}}'></x-header>
         <x-header class="text-xl mb-4" name='Company : {{ $employee->company->name }}'></x-header>
         <div class="flex justify-center mb-10">
-            <x-button class="w-56 text-base" link='/company/{{ $employee->company->name }}' name='Back To Dashboard'></x-button>
+            <x-button class="w-56 text-base" link='/company/{{ $employee->company->name }}' name='Back To File'></x-button>
         </div>
      </div>
      
