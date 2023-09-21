@@ -27,17 +27,20 @@ Auth::routes();
 //admin dashboard
 Route::get('/home', [CompanyController::class, 'index'])->middleware('auth');
 
-//create company form
+//company forms
 Route::get('create-company', [CompanyController::class, 'create'])->middleware('auth');
 Route::post('create-company', [CompanyController::class, 'store'])->middleware('auth');
 Route::get('edit-company/{company:id}', [CompanyController::class, 'edit'])->middleware('auth');
 Route::patch('edit-company/{company:id}', [CompanyController::class, 'update'])->middleware('auth');
+Route::delete('company/{company:name}', [CompanyController::class, 'destroy'])->middleware('auth');
 
-//create employee form
+//employee forms
 Route::get('create-employee', [EmployeeController::class, 'create'])->middleware('auth');
 Route::post('create-employee', [EmployeeController::class, 'store'])->middleware('auth');
 Route::get('edit-employee/{employee:id}', [EmployeeController::class, 'edit'])->middleware('auth');
 Route::patch('edit-employee/{employee:id}', [EmployeeController::class, 'update'])->middleware('auth');
+Route::delete('company/{company:name}', [EmployeeController::class, 'destroy'])->middleware('auth');
+
 
 
 //see company edit page

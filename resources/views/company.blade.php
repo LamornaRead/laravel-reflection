@@ -19,7 +19,13 @@
                     <p><strong>Company Website :</strong> {{ $company->website }}</p>
                     <div>
                         <x-button class="uppercase text-sm px-4" link='/edit-company/{{ $company->id }}' name='edit'></x-button>
-                        <x-button class="uppercase text-sm px-3" link='#' name='delete'></x-button>
+                        {{-- <x-button class="uppercase text-sm px-3" link='#' name='delete'></x-button> --}}
+                        <form method="POST" action="/company/{{ $company->name }}">
+                            @csrf
+                            @method('DELETE')
+
+                            <x-form.button name='Delete'></x-form.button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -39,7 +45,13 @@
                     </div>
                     <div class="col-span-3 xl:col-span-2 my-auto">
                         <x-button class="uppercase text-sm px-4 lg:mr-3" link='/edit-employee/{{ $em->id }}' name='edit'></x-button>
-                        <x-button class="uppercase text-sm px-3" link='#' name='delete'></x-button>
+                        {{-- <x-button class="uppercase text-sm px-3" link='#' name='delete'></x-button> --}}
+                        <form method="POST" action="/company/{{ $company->name }}">
+                            @csrf
+                            @method('DELETE')
+
+                            <x-form.button name='Delete'></x-form.button>
+                        </form>
                     </div>
                 </div>
         </x-company-card>

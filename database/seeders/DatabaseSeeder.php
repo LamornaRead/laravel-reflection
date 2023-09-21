@@ -7,6 +7,7 @@ use App\Models\Company;
 use App\Models\Employee;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Schema;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,9 +18,11 @@ class DatabaseSeeder extends Seeder
    
     public function run(): void
     {
+        Schema::disableForeignKeyConstraints();
         User::truncate();
         Company::truncate();
         Employee::truncate();
+        Schema::enableForeignKeyConstraints();
         // \App\Models\User::factory(10)->create();
 
         User::factory()->create([
@@ -28,6 +31,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password')
         ]);
 
+       Company::factory(20)->create();
        Employee::factory(5)->create(['company_id' => '1']);
     //    Employee::factory(3)->create(['company_id' => '2']);
     //    Employee::factory(2)->create(['company_id' => '3']);
@@ -49,6 +53,6 @@ class DatabaseSeeder extends Seeder
     //    Employee::factory(2)->create(['company_id' => '19']);
     //    Employee::factory(2)->create(['company_id' => '20']);
 
-       Company::factory(20)->create();
+    
     }
 }

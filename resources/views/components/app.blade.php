@@ -51,7 +51,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/home">Home</a>
+                                    <a class="dropdown-item" href="/home">All Info</a>
+                                    <a class="dropdown-item" href="/home">All Companies</a>
+                                    <a class="dropdown-item" href="/home">All Employees</a>
                                     <a class="dropdown-item" href="/create-company">Add Company</a>
                                     <a class="dropdown-item" href="/create-employee">Add Employee</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"

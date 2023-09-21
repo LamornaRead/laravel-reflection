@@ -64,4 +64,13 @@ class EmployeeController extends Controller
 
         return back()->with('success', 'File Updated');
     }
+
+    public function destroy(Employee $employee)
+    {
+        $employee->delete();
+
+        // return redirect('/home');
+
+        return back()->with('success', 'File Updated');
+    }
 }

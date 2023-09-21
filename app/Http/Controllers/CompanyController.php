@@ -18,7 +18,7 @@ class CompanyController extends Controller
             abort(403);
         }
         return view('home', [
-            'companies' => Company::orderBy('name')->paginate(8)
+            'companies' => Company::orderBy('name')->paginate(9)
         ]);
     }
 
@@ -85,5 +85,12 @@ class CompanyController extends Controller
 
         return back()->with('success', 'File Updated');
 
+    }
+
+    public function destroy(Company $company)
+    {
+        $company->delete();
+
+        return redirect('/home');
     }
 }
