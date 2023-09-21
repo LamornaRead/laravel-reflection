@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\HomeController;
@@ -25,9 +26,11 @@ Auth::routes();
 //admin access to a dashboard that only admins can see
 
 //admin dashboard
-Route::get('/home', [CompanyController::class, 'index'])->middleware('auth');
+Route::get('/home', [AdminController::class, 'index'])->middleware('auth');
+Route::get('/admin/all', [AdminController::class, 'show'])->middleware('auth');
 
 //company forms
+Route::get('companies/all', [CompanyController::class, 'show'])->middleware('auth');
 Route::get('create-company', [CompanyController::class, 'create'])->middleware('auth');
 Route::post('create-company', [CompanyController::class, 'store'])->middleware('auth');
 Route::get('edit-company/{company:id}', [CompanyController::class, 'edit'])->middleware('auth');

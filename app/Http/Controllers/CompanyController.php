@@ -12,15 +12,15 @@ class CompanyController extends Controller
 {
     //
 
-    public function index()
-    {
-        if(auth()->guest()) {
-            abort(403);
-        }
-        return view('home', [
-            'companies' => Company::orderBy('name')->paginate(9)
-        ]);
-    }
+    // public function index()
+    // {
+    //     if(auth()->guest()) {
+    //         abort(403);
+    //     }
+    //     return view('home', [
+    //         'companies' => Company::orderBy('name')->paginate(10)
+    //     ]);
+    // }
 
     public function show(Company $company, Employee $employees) 
     {
