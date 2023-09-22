@@ -63,7 +63,7 @@ class CompanyController extends Controller
 
     public function edit(Company $company) 
     {
-        return view('edit-company', [
+        return view('companies/edit', [
             'company' => $company,
        ]);
     }
@@ -91,6 +91,8 @@ class CompanyController extends Controller
     {
         $company->delete();
 
-        return redirect('/home');
+        session()->flash('success', 'File Deleted');
+
+        return redirect('/admin/all-companies');
     }
 }

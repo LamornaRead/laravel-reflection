@@ -6,8 +6,8 @@
         <div class="col-span-1 bg-gray-900 p-4 hidden md:block">
             <ul class="liststyle-none p-0">
                 <li class="md:mb-3"><a class="text-xs lg:text-sm no-underline uppercase text-orange-600" href="/home">All Info</a></li>
-                <li class="md:mb-3"><a class="text-xs lg:text-sm no-underline uppercase text-orange-600" href="/admin/all">All Companies</a></li>
-                <li class="md:mb-3"><a class="text-xs lg:text-sm no-underline uppercase text-orange-600" href="">All Employees</a></li>
+                <li class="md:mb-3"><a class="text-xs lg:text-sm no-underline uppercase text-orange-600" href="/admin/all-companies">All Companies</a></li>
+                <li class="md:mb-3"><a class="text-xs lg:text-sm no-underline uppercase text-orange-600" href="/admin/all-employees">All Employees</a></li>
                 <li class="md:mb-3"><a class="text-xs lg:text-sm no-underline uppercase text-orange-600" href="">Add Company</a></li>
                 <li class="md:mb-3"><a class="text-xs lg:text-sm no-underline uppercase text-orange-600" href="">Add Employee</a></li>
                 {{-- <li><a href=""></a></li>

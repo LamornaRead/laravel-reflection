@@ -39,7 +39,7 @@ class EmployeeController extends Controller
 
     public function edit(Employee $employee, Company $company) 
     {
-        return view('edit-employee', [
+        return view('employee/edit', [
             'employee' => $employee,
             'company' => $company,
             'companies' => Company::all()
@@ -69,8 +69,8 @@ class EmployeeController extends Controller
     {
         $employee->delete();
 
-        // return redirect('/home');
+        session()->flash('success', 'File Deleted');
 
-        return back()->with('success', 'File Updated');
+        return redirect('/admin/all-employees');
     }
 }

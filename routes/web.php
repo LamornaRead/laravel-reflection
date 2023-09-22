@@ -27,26 +27,27 @@ Auth::routes();
 
 //admin dashboard
 Route::get('/home', [AdminController::class, 'index'])->middleware('auth');
-Route::get('/admin/all', [AdminController::class, 'show'])->middleware('auth');
+Route::get('/admin/all-companies', [AdminController::class, 'showCompanies'])->middleware('auth');
+Route::get('/admin/all-employees', [AdminController::class, 'showEmployees'])->middleware('auth');
 
 //company forms
 Route::get('companies/all', [CompanyController::class, 'show'])->middleware('auth');
 Route::get('create-company', [CompanyController::class, 'create'])->middleware('auth');
 Route::post('create-company', [CompanyController::class, 'store'])->middleware('auth');
-Route::get('edit-company/{company:id}', [CompanyController::class, 'edit'])->middleware('auth');
-Route::patch('edit-company/{company:id}', [CompanyController::class, 'update'])->middleware('auth');
-Route::delete('company/{company:name}', [CompanyController::class, 'destroy'])->middleware('auth');
+Route::get('companies/edit/{company:id}', [CompanyController::class, 'edit'])->middleware('auth');
+Route::patch('companies/edit/{company:id}', [CompanyController::class, 'update'])->middleware('auth');
+Route::delete('companies/edit/{company:id}', [CompanyController::class, 'destroy'])->middleware('auth');
 
 //employee forms
 Route::get('create-employee', [EmployeeController::class, 'create'])->middleware('auth');
 Route::post('create-employee', [EmployeeController::class, 'store'])->middleware('auth');
-Route::get('edit-employee/{employee:id}', [EmployeeController::class, 'edit'])->middleware('auth');
-Route::patch('edit-employee/{employee:id}', [EmployeeController::class, 'update'])->middleware('auth');
-Route::delete('company/{company:name}', [EmployeeController::class, 'destroy'])->middleware('auth');
+Route::get('employee/edit/{employee:id}', [EmployeeController::class, 'edit'])->middleware('auth');
+Route::patch('employee/edit/{employee:id}', [EmployeeController::class, 'update'])->middleware('auth');
+Route::delete('employee/edit/{employee:id}', [EmployeeController::class, 'destroy'])->middleware('auth');
 
 
 
-//see company edit page
+//see company edit info 
 Route::get('company/{company:name}', [CompanyController::class, 'show'])->middleware('auth');
 
 
