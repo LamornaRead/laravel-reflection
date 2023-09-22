@@ -34,7 +34,7 @@
                 {{ $employees->links() }}
             </div>
         @else
-            <p class="text-xl sm:text-2xl text-center uppercase tracking-widest mt-24 sm:mt-56">No Employees have been added yet</p>
+            <p class="text-xl sm:text-2xl text-center uppercase tracking-widest mt-20">No Employees have been added yet</p>
             <p class="text-xl sm:text-2xl text-center uppercase tracking-widest">Come Back Later</p>
         @endif
     </x-dashboard>
