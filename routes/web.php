@@ -31,9 +31,8 @@ Route::get('/admin/all-companies', [AdminController::class, 'showCompanies'])->m
 Route::get('/admin/all-employees', [AdminController::class, 'showEmployees'])->middleware('auth');
 
 //company forms
-Route::get('companies/all', [CompanyController::class, 'show'])->middleware('auth');
-Route::get('create-company', [CompanyController::class, 'create'])->middleware('auth');
-Route::post('create-company', [CompanyController::class, 'store'])->middleware('auth');
+Route::get('companies/create', [CompanyController::class, 'create'])->middleware('auth');
+Route::post('companies/create', [CompanyController::class, 'store'])->middleware('auth');
 Route::get('companies/edit/{company:id}', [CompanyController::class, 'edit'])->middleware('auth');
 Route::patch('companies/edit/{company:id}', [CompanyController::class, 'update'])->middleware('auth');
 Route::delete('companies/edit/{company:id}', [CompanyController::class, 'destroy'])->middleware('auth');

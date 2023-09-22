@@ -1,15 +1,19 @@
 <x-app>
-    
-    <div>
-    <x-header class="text-3xl mb-4" name='Create Company File'></x-header>
-        <div class="flex justify-center mb-10">
-            <x-button class="w-56 text-base" link='/home' name='Back To Dashboard'></x-button>
-        </div>
-     </div>
-     
-     <x-container-main>
-        <x-company-card class="lg:w-6/12 mx-auto p-8">
-                <form method="POST" action="/create-company" enctype="multipart/form-data">
+    <x-dashboard>
+        <div class="lg:mb-16">
+            <x-company-card class="lg:w-6/12 mx-auto p-8">
+                <x-header class="text-3xl mb-8" name='Create Company File'></x-header>
+                <div class="flex justify-center mb-4">
+                    <x-button class="uppercase py-2 px-4" link="/home" name='home'></x-button>
+                </div>
+                @if(session()->has('success'))
+
+                <x-form.field>
+                    <p class="text-center text-white bg-green-500 w-40 py-2 px-3 mx-auto rounded">{{ session('success') }}</p>
+                </x-form.field>
+
+                @endif
+                <form method="POST" action="/companies/create" enctype="multipart/form-data">
                     @csrf
                 
                 <x-form.field>
@@ -33,21 +37,11 @@
                 </x-form.field>
 
                 <x-form.field>
-                    <x-form.button class='text-base w-32' name='submit'></x-form.button>
+                    <x-form.button class='text-base w-32 py-2' name='submit'></x-form.button>
                 </x-form.field>
-
-
-                @if(session()->has('success'))
-
-                <x-form.field>
-                    <p class="text-center text-white bg-green-500 w-40 py-2 px-3 mx-auto rounded">{{ session('success') }}</p>
-                </x-form.field>
-
-                @endif
 
             </form>
         </x-company-card>
-     </x-container-main>
-   
+        </div>
+    </x-dashboard>
 </x-app>
-

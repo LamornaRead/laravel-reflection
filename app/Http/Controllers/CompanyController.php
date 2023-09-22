@@ -32,7 +32,7 @@ class CompanyController extends Controller
 
     public function create() 
     {
-        return view('create-company', [
+        return view('companies/create', [
             'companies' => Company::all()
         ]);
     }
@@ -58,7 +58,7 @@ class CompanyController extends Controller
 
         session()->flash('success', 'File Added');
 
-        return redirect('/create-company');
+        return redirect('/companies/create');
     }
 
     public function edit(Company $company) 
