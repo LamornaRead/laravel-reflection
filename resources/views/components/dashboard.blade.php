@@ -1,4 +1,4 @@
-<x-header class="bg-orange-600 my-0 py-4 md:py-12 border-b border-gray-900" name='Admin Page'></x-header>
+
 
 
 <div>
@@ -9,14 +9,17 @@
                 <li class="md:mb-3"><a class="text-xs lg:text-sm no-underline uppercase text-orange-600" href="/admin/all-companies">All Companies</a></li>
                 <li class="md:mb-3"><a class="text-xs lg:text-sm no-underline uppercase text-orange-600" href="/admin/all-employees">All Employees</a></li>
                 <li class="md:mb-3"><a class="text-xs lg:text-sm no-underline uppercase text-orange-600" href="">Add Company</a></li>
-                <li class="md:mb-3"><a class="text-xs lg:text-sm no-underline uppercase text-orange-600" href="">Add Employee</a></li>
+                <li class="md:mb-3"><a class="text-xs lg:text-sm no-underline uppercase text-orange-600" href="/employee/create">Add Employee</a></li>
                 {{-- <li><a href=""></a></li>
                 <li><a href=""></a></li> --}}
             </ul>
         </div>
         
-        <div {{ $attributes->merge(['class' => 'col-span-7 p-4']) }}>
-            {{ $slot }}
+        <div {{ $attributes->merge(['class' => 'col-span-7']) }}>
+            <x-header class="bg-orange-600 my-0 py-4 md:py-12 border-b border-gray-900" name='Admin Page'></x-header>
+            <div class="p-8">
+                {{ $slot }}
+            </div>
         </div>
         
 

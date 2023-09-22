@@ -39,8 +39,8 @@ Route::patch('companies/edit/{company:id}', [CompanyController::class, 'update']
 Route::delete('companies/edit/{company:id}', [CompanyController::class, 'destroy'])->middleware('auth');
 
 //employee forms
-Route::get('create-employee', [EmployeeController::class, 'create'])->middleware('auth');
-Route::post('create-employee', [EmployeeController::class, 'store'])->middleware('auth');
+Route::get('employee/create', [EmployeeController::class, 'create'])->middleware('auth');
+Route::post('employee/create', [EmployeeController::class, 'store'])->middleware('auth');
 Route::get('employee/edit/{employee:id}', [EmployeeController::class, 'edit'])->middleware('auth');
 Route::patch('employee/edit/{employee:id}', [EmployeeController::class, 'update'])->middleware('auth');
 Route::delete('employee/edit/{employee:id}', [EmployeeController::class, 'destroy'])->middleware('auth');

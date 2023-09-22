@@ -55,7 +55,7 @@
                                     <a class="dropdown-item" href="/admin/all-companies">All Companies</a>
                                     <a class="dropdown-item" href="/admin/all-employees">All Employees</a>
                                     <a class="dropdown-item" href="/create-company">Add Company</a>
-                                    <a class="dropdown-item" href="/create-employee">Add Employee</a>
+                                    <a class="dropdown-item" href="/employee/create">Add Employee</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

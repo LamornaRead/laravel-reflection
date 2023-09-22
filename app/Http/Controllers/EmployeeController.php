@@ -12,7 +12,7 @@ class EmployeeController extends Controller
 {
     //
     public function create() {
-        return view('create-employee', [
+        return view('employee/create', [
             'employees' => Employee::all(),
             'companies' => Company::all()
         ]);
@@ -34,7 +34,7 @@ class EmployeeController extends Controller
 
         session()->flash('success', 'File Added');
 
-        return redirect('/create-employee');
+        return redirect('/employee/create');
     }
 
     public function edit(Employee $employee, Company $company) 

@@ -17,6 +17,14 @@
 
             <div class="col-span-7">
                 <x-company-card class="p-4 lg:w-8/12">
+                    @if(session()->has('success'))
+    
+                    <x-form.field>
+                        <p class="text-center text-white bg-green-500 w-40 py-2 px-3mx-auto rounded">{{ session('success') }}</p>
+                    </x-form.field>
+
+                    @endif
+                    
                     <form method="POST" action="/employee/edit/{{ $employee->id }}">
                         @csrf
                         @method('PATCH')
@@ -53,15 +61,6 @@
                         <x-form.field>
                             <x-form.button class='text-base w-32 py-2' name='Update'></x-form.button>
                         </x-form.field>
-    
-    
-                        @if(session()->has('success'))
-    
-                            <x-form.field>
-                                <p class="text-center text-white bg-green-500 w-40 py-2 px-3mx-auto rounded">{{ session('success') }}</p>
-                            </x-form.field>
-    
-                        @endif
     
                     </form>
                 </x-company-card>
