@@ -7,7 +7,7 @@
   required
   >
 <style>
-    .input-field:focus {
+    input:focus {
         box-shadow: 0 0 5px rgba(81, 203, 238, 1);
         border: 1px solid rgba(81, 203, 238, 1);
     }
