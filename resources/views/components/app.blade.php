@@ -14,6 +14,7 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/2af8b76caa.js" crossorigin="anonymous"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -25,50 +26,66 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     C M S <i class="fa-solid fa-people-roof"></i>
                 </a>
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
-                </button>
-
+                </button>   
+                    
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
+                    <div class="md:hidden mt-2">
                         @guest
                             @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
+                                <button><a href="{{ route('login') }}" class="no-underline text-gray-900 py-2 px-6">{{ __('Login') }}</a></button>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/home">All Info</a>
-                                    <a class="dropdown-item" href="/admin/all-companies">All Companies</a>
-                                    <a class="dropdown-item" href="/admin/all-employees">All Employees</a>
-                                    <a class="dropdown-item" href="/companies/create">Add Company</a>
-                                    <a class="dropdown-item" href="/employee/create">Add Employee</a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
+                            <p class="m-0">{{ Auth::user()->name }}</p>
+                            <a class="block pt-2 no-underline text-gray-900" href="/home">All Info</a>
+                            <a class="block pt-2 no-underline text-gray-900" href="/admin/all-companies">All Companies</a>
+                            <a class="block pt-2 no-underline text-gray-900" href="/admin/all-employees">All Employees</a>
+                            <a class="block pt-2 no-underline text-gray-900" href="/companies/create">Add Company</a>
+                            <a class="block pt-2 no-underline text-gray-900" href="/employee/create">Add Employee</a>
+                            <a class="block pt-2 no-underline text-gray-900 pb-2" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                    
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
                         @endguest
-                    </ul>
+                    </div>
+                </div>
+
+
+                <div class="hidden md:block">
+                    @guest
+                        @if (Route::has('login'))
+                            <button><a href="{{ route('login') }}" class="no-underline text-gray-900 py-2 px-6">{{ __('Login') }}</a></button>
+                        @endif
+                     @else
+                        <x-dropdown>
+                            <x-slot name="trigger">
+                                <button class="py-2 px-6">{{ Auth::user()->name }}</button>
+                            </x-slot>
+                            
+
+                            <a class="block pt-2 no-underline text-gray-900" href="/home">All Info</a>
+                            <a class="block pt-2 no-underline text-gray-900" href="/admin/all-companies">All Companies</a>
+                            <a class="block pt-2 no-underline text-gray-900" href="/admin/all-employees">All Employees</a>
+                            <a class="block pt-2 no-underline text-gray-900" href="/companies/create">Add Company</a>
+                            <a class="block pt-2 no-underline text-gray-900" href="/employee/create">Add Employee</a>
+                            <a class="block pt-2 no-underline text-gray-900 pb-2" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                    
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </x-dropdown>
+                    @endguest
                 </div>
             </div>
         </nav>

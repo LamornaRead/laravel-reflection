@@ -1,0 +1,19 @@
+.banner {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+    filter: brightness(20%);
+}
+
+.banner-content {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    height: 500px;
+    width: 100%;
+    position: absolute;
+    top: 55px;
+    z-index: 100;
+}

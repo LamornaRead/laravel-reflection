@@ -37,7 +37,7 @@
                 </x-form.field>
 
                 <x-form.field>
-                    <x-form.button class='text-base w-32 py-2' name='submit'></x-form.button>
+                    <x-form.button name='submit'></x-form.button>
                 </x-form.field>
 
             </form>
