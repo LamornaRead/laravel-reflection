@@ -1,4 +1,4 @@
-<x-app>
+<x-layout.app>
     <x-dashboard>
         <div class="md:grid md:grid-cols-8 mb-10">
             <div class="col-span-1 mb-4">
@@ -69,4 +69,4 @@
         </div>
 
     </x-dashboard>
-</x-app>
+</x-layout.app>

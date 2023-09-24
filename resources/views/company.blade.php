@@ -1,4 +1,4 @@
-<x-app>
+<x-layout.app>
     <x-dashboard>
         <div class="min-h-screen">
 
@@ -52,4 +52,4 @@
         </div>
 
     </x-dashboard>
-</x-app>
+</x-layout.app>

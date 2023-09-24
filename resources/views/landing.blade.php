@@ -1,4 +1,4 @@
-<x-app>
+<x-layout.app>
 
     <div class="lg:hidden">
         <x-header class="bg-orange-700 text-white p-10 mt-0 mb-0" name='Company Management Services <i class="fa-solid fa-people-roof"></i>'></x-header>
@@ -130,4 +130,4 @@
         <p class="m-0">&copy; copyright CMS</p>
     </div>
   
-</x-app>
+</x-layout.app>

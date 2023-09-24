@@ -1,4 +1,4 @@
-<x-app>
+<x-layout.app>
     <x-dashboard>
         @if($companies->count())
     
@@ -21,5 +21,5 @@
         <p class="text-xl sm:text-2xl text-center uppercase tracking-widest">Come Back Later</p>
         @endif
     </x-dashboard>
-</x-app>
+</x-layout.app>
 

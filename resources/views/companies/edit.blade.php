@@ -1,4 +1,4 @@
-<x-app>
+<x-layout.app>
     <x-dashboard>
         <div>
             <div class="lg:grid lg:grid-cols-8 lg:mb-20">
@@ -66,4 +66,4 @@
 
         </div>
     </x-dashboard>
-</x-app>
+</x-layout.app>

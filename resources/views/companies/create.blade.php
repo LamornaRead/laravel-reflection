@@ -1,4 +1,4 @@
-<x-app>
+<x-layout.app>
     <x-dashboard>
         <div class="lg:mb-16">
             <x-company-card class="lg:w-6/12 mx-auto p-8">
@@ -44,4 +44,4 @@
         </x-company-card>
         </div>
     </x-dashboard>
-</x-app>
+</x-layout.app>

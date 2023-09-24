@@ -1,4 +1,4 @@
-<x-app>
+<x-layout.app>
     <x-dashboard>
         <div>
             <h4 class="text-2xl lg:text-3xl pb-4 pt-2 lg:ml-2 mb-6 border-b border-gray-400">All Companies</h4>
@@ -33,4 +33,4 @@
             <p class="text-xl sm:text-2xl text-center uppercase tracking-widest">Come Back Later</p>
         @endif
     </x-dashboard>
-</x-app>
+</x-layout.app>

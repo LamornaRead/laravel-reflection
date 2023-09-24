@@ -1,4 +1,4 @@
-<x-app>
+<x-layout.app>
 <div class="container">
     <x-header name='Admin Login'></x-header>
     
@@ -64,6 +64,6 @@
         </div>
     </div>
 </div>
-</x-app>
+</x-layout.app>
 
 
