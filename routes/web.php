@@ -46,7 +46,7 @@ Route::delete('employee/edit/{employee:id}', [EmployeeController::class, 'destro
 
 
 
-//see company edit info 
+//see company info 
 Route::get('company/{company:name}', [CompanyController::class, 'show'])->middleware('auth');
 
 
