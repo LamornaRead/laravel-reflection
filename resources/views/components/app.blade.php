@@ -38,17 +38,17 @@
                                 <button><a href="{{ route('login') }}" class="no-underline text-gray-900 py-2 px-6">{{ __('Login') }}</a></button>
                             @endif
                         @else
-                            <p class="m-0">{{ Auth::user()->name }}</p>
-                            <a class="block pt-2 no-underline text-gray-900" href="/home">All Info</a>
-                            <a class="block pt-2 no-underline text-gray-900" href="/admin/all-companies">All Companies</a>
-                            <a class="block pt-2 no-underline text-gray-900" href="/admin/all-employees">All Employees</a>
-                            <a class="block pt-2 no-underline text-gray-900" href="/companies/create">Add Company</a>
-                            <a class="block pt-2 no-underline text-gray-900" href="/employee/create">Add Employee</a>
-                            <a class="block pt-2 no-underline text-gray-900 pb-2" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
+                             
+                            <p class="pl-2 m-0 uppercase text-orange-600">{{ Auth::user()->name }}</p>
+                            <x-dropdown-item href="/home" :active="request()->routeIs('home')">All Info</x-dropdown-item>
+                            <x-dropdown-item href="/admin/all-companies" :active="request()->routeIs('all-companies')">All Companies</x-dropdown-item>
+                            <x-dropdown-item href="/admin/all-employees" :active="request()->routeIs('all-employees')">All Employees</x-dropdown-item>
+                            <x-dropdown-item href="/companies/create" :active="request()->routeIs('create-company')">Add Company</x-dropdown-item>
+                            <x-dropdown-item href="/employee/create" :active="request()->routeIs('create-employee')">Add Employee</x-dropdown-item>
+                            <x-dropdown-item href="{{ route('logout') }}"                                 
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                            </x-dropdown-item>
                     
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
@@ -66,20 +66,18 @@
                      @else
                         <x-dropdown>
                             <x-slot name="trigger">
-                                <button class="py-2 px-6">{{ Auth::user()->name }}</button>
+                                <button class="py-2 px-6">{{ Auth::user()->name }} <i class="fa-solid fa-chevron-down fa-xs"></i></button>
                             </x-slot>
                             
-
-                            <a class="block pt-2 no-underline text-gray-900" href="/home">All Info</a>
-                            <a class="block pt-2 no-underline text-gray-900" href="/admin/all-companies">All Companies</a>
-                            <a class="block pt-2 no-underline text-gray-900" href="/admin/all-employees">All Employees</a>
-                            <a class="block pt-2 no-underline text-gray-900" href="/companies/create">Add Company</a>
-                            <a class="block pt-2 no-underline text-gray-900" href="/employee/create">Add Employee</a>
-                            <a class="block pt-2 no-underline text-gray-900 pb-2" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
+                            <x-dropdown-item href="/home" :active="request()->routeIs('home')">All Info</x-dropdown-item>
+                            <x-dropdown-item href="/admin/all-companies" :active="request()->routeIs('all-companies')">All Companies</x-dropdown-item>
+                            <x-dropdown-item href="/admin/all-employees" :active="request()->routeIs('all-employees')">All Employees</x-dropdown-item>
+                            <x-dropdown-item href="/companies/create" :active="request()->routeIs('create-company')">Add Company</x-dropdown-item>
+                            <x-dropdown-item href="/employee/create" :active="request()->routeIs('create-employee')">Add Employee</x-dropdown-item>
+                            <x-dropdown-item href="{{ route('logout') }}"                                 
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                            </x-dropdown-item>
                     
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf

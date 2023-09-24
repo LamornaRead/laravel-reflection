@@ -26,19 +26,19 @@ Auth::routes();
 //admin access to a dashboard that only admins can see
 
 //admin dashboard
-Route::get('/home', [AdminController::class, 'index'])->middleware('auth');
-Route::get('/admin/all-companies', [AdminController::class, 'showCompanies'])->middleware('auth');
-Route::get('/admin/all-employees', [AdminController::class, 'showEmployees'])->middleware('auth');
+Route::get('/home', [AdminController::class, 'index'])->middleware('auth')->name('home');
+Route::get('/admin/all-companies', [AdminController::class, 'showCompanies'])->middleware('auth')->name('all-companies');
+Route::get('/admin/all-employees', [AdminController::class, 'showEmployees'])->middleware('auth')->name('all-employees');
 
 //company forms
-Route::get('companies/create', [CompanyController::class, 'create'])->middleware('auth');
+Route::get('companies/create', [CompanyController::class, 'create'])->middleware('auth')->name('create-company');
 Route::post('companies/create', [CompanyController::class, 'store'])->middleware('auth');
 Route::get('companies/edit/{company:id}', [CompanyController::class, 'edit'])->middleware('auth');
 Route::patch('companies/edit/{company:id}', [CompanyController::class, 'update'])->middleware('auth');
 Route::delete('companies/edit/{company:id}', [CompanyController::class, 'destroy'])->middleware('auth');
 
 //employee forms
-Route::get('employee/create', [EmployeeController::class, 'create'])->middleware('auth');
+Route::get('employee/create', [EmployeeController::class, 'create'])->middleware('auth')->name('create-employee');
 Route::post('employee/create', [EmployeeController::class, 'store'])->middleware('auth');
 Route::get('employee/edit/{employee:id}', [EmployeeController::class, 'edit'])->middleware('auth');
 Route::patch('employee/edit/{employee:id}', [EmployeeController::class, 'update'])->middleware('auth');
