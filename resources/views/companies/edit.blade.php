@@ -4,7 +4,7 @@
             <div class="lg:grid lg:grid-cols-8 lg:mb-20">
                 <div class="col-span-1 mb-4">
                     <div>
-                        <x-button class="uppercase text-base py-2 px-10"  link='/admin/all-companies' name='Back'></x-button>
+                        <x-back-button href="/admin/all-employees">Back</x-back-button>
                     </div>
                     
                     <div>
@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="col-span-7">
-                    <x-company-card class="p-4 lg:w-8/12">
+                    <x-company-card class="p-4 md:w-8/12 mx-auto">
                         @if(session()->has('success'))
                 
                         <x-form.field>

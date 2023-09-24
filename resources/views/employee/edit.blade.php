@@ -1,9 +1,9 @@
 <x-layout.app>
     <x-dashboard>
         <div class="md:grid md:grid-cols-8 mb-10">
-            <div class="col-span-1 mb-4">
+            <div class="md:col-span-1 mb-4">
                 <div>
-                    <x-button class="uppercase text-base py-2 px-10"  link='/admin/all-employees' name='Back'></x-button>
+                    <x-back-button href="/admin/all-employees">Back</x-back-button>
                 </div>
                 
                 <div>
@@ -16,7 +16,7 @@
             </div>
 
             <div class="col-span-7">
-                <x-company-card class="p-4 lg:w-8/12">
+                <x-company-card class="p-4 md:w-8/12 mx-auto">
                     @if(session()->has('success'))
     
                     <x-form.field>
@@ -25,18 +25,20 @@
 
                     @endif
                     
-                    <form method="POST" action="/employee/edit/{{ $employee->id }}">
+                    <form method="POST" action="/employee/edit/{{ $employee->id }}" onsubmit="return validateEmployee()">
                         @csrf
                         @method('PATCH')
                         
                         <x-form.field>
                             <x-form.label for='first_name'>Employee First Name <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></x-form.label>
                             <x-form.input name='first_name' value='{{ $employee->first_name }}'></x-form.input>
+                            <x-form.js-error-two id="firstnameErr"></x-form.js-error-two>
                         </x-form.field>
     
                         <x-form.field>
                             <x-form.label for='last_name'>Employee Last Name <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></x-form.label>
                             <x-form.input name='last_name' value='{{ $employee->last_name }}'></x-form.input>
+                            <x-form.js-error-two id="lastnameErr"></x-form.js-error-two>
                         </x-form.field>
     
                         <x-form.field>
@@ -51,11 +53,13 @@
                         <x-form.field>
                             <x-form.label for='email'>Employee Email <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></x-form.label>
                             <x-form.input name='email' value='{{ $employee->email }}'></x-form.input>
+                            <x-form.js-error-two id="emailErr"></x-form.js-error-two>
                         </x-form.field>
     
                         <x-form.field>
                             <x-form.label for='phone_number'>Employee Telephone <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></x-form.label>
                             <x-form.input name='phone_number' type='tel' value='{{ $employee->phone_number }}'></x-form.input>
+                            <x-form.js-error-two id="phoneErr"></x-form.js-error-two>
                         </x-form.field>
     
                         <x-form.field>

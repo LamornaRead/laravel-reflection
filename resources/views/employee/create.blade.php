@@ -13,17 +13,19 @@
                         </x-form.field>
 
                     @endif
-                <form method="POST" action="/employee/create">
+                <form method="POST" action="/employee/create" onsubmit="return validateEmployee()">
                     @csrf
                     
                     <x-form.field>
                         <x-form.label for='first_name'>Employee First Name <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></x-form.label>
                         <x-form.input name='first_name'></x-form.input>
+                        <x-form.js-error-two id="firstnameErr"></x-form.js-error-two>
                     </x-form.field>
     
                     <x-form.field>
                         <x-form.label for='last_name'>Employee Last Name <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></x-form.label>
                         <x-form.input name='last_name'></x-form.input>
+                        <x-form.js-error-two id="lastnameErr"></x-form.js-error-two>
                     </x-form.field>
     
                     <x-form.field>
@@ -38,11 +40,13 @@
                     <x-form.field>
                         <x-form.label for='email'>Employee Email <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></x-form.label>
                         <x-form.input name='email'></x-form.input>
+                        <x-form.js-error-two id="emailErr"></x-form.js-error-two>
                     </x-form.field>
     
                     <x-form.field>
                         <x-form.label for='phone_number'>Employee Telephone <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></x-form.label>
                         <x-form.input name='phone_number' type='tel'></x-form.input>
+                        <x-form.js-error-two id="phoneErr"></x-form.js-error-two>
                     </x-form.field>
     
                     <x-form.field>
