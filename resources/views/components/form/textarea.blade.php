@@ -4,8 +4,7 @@
     id="{{ $name }}" 
     name="{{ $name }}" 
     rows="{{ $rows }}">
-    {{ $slot }}
-</textarea>
+    {{ $slot }}</textarea>
 
 <style>
     textarea:focus {
