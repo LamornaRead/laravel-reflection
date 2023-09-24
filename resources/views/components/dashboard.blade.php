@@ -5,13 +5,11 @@
     <div class="md:grid grid-cols-8">
         <div class="col-span-1 bg-gray-900 p-4 hidden md:block">
             <ul class="liststyle-none p-0">
-                <li class="md:mb-3"><a class="text-xs lg:text-sm no-underline uppercase text-orange-600" href="/home">All Info</a></li>
-                <li class="md:mb-3"><a class="text-xs lg:text-sm no-underline uppercase text-orange-600" href="/admin/all-companies">All Companies</a></li>
-                <li class="md:mb-3"><a class="text-xs lg:text-sm no-underline uppercase text-orange-600" href="/admin/all-employees">All Employees</a></li>
-                <li class="md:mb-3"><a class="text-xs lg:text-sm no-underline uppercase text-orange-600" href="/companies/create">Add Company</a></li>
-                <li class="md:mb-3"><a class="text-xs lg:text-sm no-underline uppercase text-orange-600" href="/employee/create">Add Employee</a></li>
-                {{-- <li><a href=""></a></li>
-                <li><a href=""></a></li> --}}
+                <x-dash-item href="/home" :active="request()->routeIs('home')">All Info</x-dash-item>
+                <x-dash-item href="/admin/all-companies" :active="request()->routeIs('all-companies')">All Companies</x-dash-item>
+                <x-dash-item href="/admin/all-employees" :active="request()->routeIs('all-employees')">All Employees</x-dash-item>
+                <x-dash-item href="/companies/create" :active="request()->routeIs('create-company')">Add Company</x-dash-item>
+                <x-dash-item href="/employee/create" :active="request()->routeIs('create-employee')">Add Employee</x-dash-item>
             </ul>
         </div>
         
