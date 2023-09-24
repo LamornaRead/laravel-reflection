@@ -79,25 +79,28 @@
             </div>
              
             <div class="lg:w-6/12">
-                <x-company-card class='p-4 bg-orange-600'>
+                <x-company-card class='p-4 bg-orange-500'>
                     <x-header class="text-2xl my-0 text-white" name='Contact Us'></x-header>
-                    <form method="POST" action="/">
+                    <form method="POST" action="/" onsubmit="return validateMessage()">
                         @csrf
-                        
+
                         <x-form.field>
                             <x-form.label class="text-white" for='name'>Fullname <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></x-form.label>
                             <x-form.input name='name'></x-form.input>
+                            <x-form.js-error id="nameErr"></x-form.js-error>
                         </x-form.field>
     
                         <x-form.field>
-                            <x-form.label class="text-white" for='email'>Your Email<i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></x-form.label>
-                            <x-form.input name='email' type='email'></x-form.input>
+                            <x-form.label class="text-white" for='email'>Your Email <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></x-form.label>
+                            <x-form.input name='email'></x-form.input>
+                            <x-form.js-error id="emailErr"></x-form.js-error>
                         </x-form.field>
     
     
                         <x-form.field>
                             <x-form.label class="text-white" for='comment'>Your Message <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></x-form.label>
                             <x-form.textarea name='comment' rows='5'>{{{ old('comment') }}}</x-form.textarea>
+                            <x-form.js-error id="commentErr"></x-form.js-error>
                         </x-form.field>
     
     

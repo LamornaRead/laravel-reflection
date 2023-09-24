@@ -1,10 +1,11 @@
 @props(['name', 'type' => 'text'])
 
-<input {{ $attributes->merge(['class' => 'border-solid border-1 border-gray-500 rounded outline-none h-8 pl-2 my-2 h-10']) }} class="input-field"id="{{ $name }}"
+<input {{ $attributes->merge(['class' => 'border-solid border-1 border-gray-500 rounded outline-none h-8 pl-2 my-2 h-10']) }} 
+  id="{{ $name }}"
   name="{{ $name }}"
   type="{{ $type }}" 
   value="{{ old($name) }}"
-  required
+  {{-- required --}}
   >
 <style>
     input:focus {

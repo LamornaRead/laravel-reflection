@@ -16,6 +16,7 @@
     <script src="https://kit.fontawesome.com/2af8b76caa.js" crossorigin="anonymous"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
 
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -92,5 +93,6 @@
             {{ $slot }}
         </main>
     </div>
+    <script src="{{ asset('js/forms.js') }}"></script>
 </body>
 </html>
