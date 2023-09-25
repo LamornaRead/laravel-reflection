@@ -7,5 +7,5 @@
     <div class="flex justify-items-center mx-auto py-4">
         <img class="rounded-lg w-32" src="{{ asset('storage/' . $company->image) }}" alt="company logo">
     </div>
-    <x-button  name='View More' link='/company/{{ $company->name }}' class="my-3 mx-auto"></x-button>
+    <x-button.normal class="my-3 mx-auto" href="/company/{{ $company->name }}">View More</x-button.normal>
 </div>

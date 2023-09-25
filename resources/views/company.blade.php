@@ -19,7 +19,8 @@
             @if($company->employees->count())
 
             <div class="my-10 flex justify-center md:block">
-                <x-button class="w-56" link='/home' name='Back To Dashboard'></x-button>
+                <x-button.normal class="w-56" href="/home">Back To Dashboard</x-button.normal>
+                {{-- <x-button class="w-56" link='/home' name='Back To Dashboard'></x-button> --}}
             </div>
         
             <x-layout.card class="p-3">
@@ -47,7 +48,7 @@
             <p class="text-xl uppercase tracking-widest my-10">No Employees have been added yet</p>
             @endif
             <div class="my-10 flex justify-center md:block">
-                <x-button class="w-56" link='/home' name='Back To Dashboard'></x-button>
+                <x-button.normal class="w-56" href="/home">Back To Dashboard</x-button.normal>
             </div>
 
         </div>

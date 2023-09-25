@@ -25,7 +25,7 @@
                         </div>
 
                         <div>
-                            <x-button class="uppercase text-xs px-4 py-2" link='/companies/edit/{{ $company->id }}' name='edit'></x-button>
+                            <x-button.normal class="mt-4 px-4 py-2" href="/companies/edit/{{ $company->id }}">Edit</x-button.normal>
                         </div>
                     </x-layout.card>
                     

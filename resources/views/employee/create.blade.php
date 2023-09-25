@@ -3,7 +3,7 @@
         <x-slot name="top">
             <x-heading.small>Create Employee File</x-heading.small>
             <div class="flex justify-center">
-                <x-button class="mt-4" link="/home" name='home'></x-button>
+                <x-button.normal class="mt-4" href="/home">Home</x-button.normal>
             </div>
         </x-slot>
 

@@ -7,6 +7,11 @@
                     <x-search.form></x-search.form>
                 </div>
                 <x-dropdown.company>
+                    <x-slot name="trigger">
+                        <button class="px-6 h-10 h-12 my-1 text-base bg-orange-700 hover:bg-orange-600 rounded text-white w-full">
+                            {{ isset($currentCompany) ? $currentCompany->name : 'Company' }}
+                        </button>
+                    </x-slot>
                     @foreach ($companies as $com) 
                         <x-dropdown.item  href="/admin/employees/{{ $com->name }}">{{ $com->name }}</x-dropdown.item>
                     @endforeach
@@ -41,7 +46,7 @@
                         </div>
 
                         <div class="col-span-1">
-                            <x-button class="uppercase text-xs px-4 py-2" link='/employee/edit/{{ $employee->id }}' name='edit'></x-button>
+                            <x-button.normal class="mt-4 px-4 py-2" href="/employee/edit/{{ $employee->id }}">Edit</x-button.normal>
                         </div>
                     </x-layout.card>
                     

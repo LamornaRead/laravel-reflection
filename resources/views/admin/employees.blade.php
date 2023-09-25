@@ -7,6 +7,11 @@
                 </div>
                 <x-dropdown.company>
                     <x-dropdown.item  href="/admin/all-employees">All</x-dropdown.item>
+                        <x-slot name="trigger">
+                            <button class="px-6 h-10 h-12 my-1 text-base bg-orange-700 hover:bg-orange-600 rounded text-white w-full">
+                                {{ isset($currentCompany) ? $currentCompany->name : 'Company' }}
+                            </button>
+                        </x-slot>
                         @foreach ($companies as $com) 
                             <x-dropdown.item  href="/admin/employees/{{ $com->name }}" class="{{ isset($currentCompany) && $currentCompany->name === $com->name ? ' bg-orange-600 text-white' : '' }}">{{ $com->name }}</x-dropdown.item>
                         @endforeach
@@ -39,7 +44,7 @@
                 </div>
 
                 <div class="col-span-1">
-                    <x-button class="uppercase text-xs px-4 py-2" link='/admin/edit/{{ $em->id }}' name='edit'></x-button>
+                    <x-button.normal class="mt-4 px-4 py-2" href="/admin/edit/{{ $em->id }}">Edit</x-button.normal>
                 </div>
             </x-layout.card>
             
