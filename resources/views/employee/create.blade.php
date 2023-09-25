@@ -8,7 +8,7 @@
         </x-slot>
 
         <div>
-            <x-company-card class="lg:w-6/12 mx-auto p-6">
+            <x-layout.card class="lg:w-6/12 mx-auto p-6">
 
 
                     @if(session()->has('success'))
@@ -59,7 +59,7 @@
                     </x-form.field>
     
                 </form>
-            </x-company-card>
+            </x-layout.card>
         </div>
     </x-dashboard>
 </x-layout.app>

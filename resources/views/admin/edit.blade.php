@@ -17,7 +17,7 @@
         </x-slot>
 
 
-                <x-company-card class="p-4 md:w-4/12 mx-auto">
+                <x-layout.card class="p-4 md:w-4/12 mx-auto">
                     @if(session()->has('success'))
     
                     <x-form.field class="mx-auto w-40">
@@ -68,7 +68,7 @@
                         </x-form.field>
     
                     </form>
-                </x-company-card>
+                </x-layout.card>
 
     </x-dashboard>
 </x-layout.app>

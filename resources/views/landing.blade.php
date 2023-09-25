@@ -24,7 +24,7 @@
 
     <x-container-main class="pb-2">
         <div class="lg:hidden my-4">
-            <x-company-card class="p-8 bg-gray-900">
+            <x-layout.card class="p-8 bg-gray-900">
                 <div class="border-b border-gray-400">
                     <h2 class="text-sm text-center text-orange-600 uppercase m-0 pb-4">In need of company management</h2>
                 </div>
@@ -35,12 +35,12 @@
                     <p>We will take care of everything.</p>
                     <p>So you don't have too.</p>
                 </div>
-            </x-company-card>
+            </x-layout.card>
         </div>
 
         <div class="lg:pt-8 lg:flex gap-6">
             <div class="lg:w-6/12">
-                <x-company-card class="p-6 bg-gray-900 text-white mb-6 tracking-wide">
+                <x-layout.card class="p-6 bg-gray-900 text-white mb-6 tracking-wide">
                     <h4 class="text-orange-600 pb-4">Customer Review</h4>
                     <x-para>
                         I recently hired CMS for my company and I can honestly say that it was the best decision I ever made.
@@ -56,9 +56,9 @@
                     </x-para>
                     
                     <x-star></x-star>
-                 </x-company-card>
+                 </x-layout.card>
 
-                 <x-company-card class="p-6 bg-gray-900 text-white mb-6 tracking-wide">
+                 <x-layout.card class="p-6 bg-gray-900 text-white mb-6 tracking-wide">
                     <h4 class="text-orange-600 pb-4">Customer Review</h4>
 
                     <x-para>
@@ -75,11 +75,11 @@
                     </x-para>
 
                     <x-star></x-star>
-                 </x-company-card>
+                 </x-layout.card>
             </div>
              
             <div class="lg:w-6/12">
-                <x-company-card class='p-4 bg-orange-500'>
+                <x-layout.card class='p-4 bg-orange-500'>
                     <x-header class="text-2xl my-0 text-white" name='Contact Us'></x-header>
                     <form method="POST" action="/" onsubmit="return validateMessage()">
                         @csrf
@@ -118,7 +118,7 @@
                         @endif
     
                     </form>
-                </x-company-card>
+                </x-layout.card>
 
                 <div class="hidden lg:flex justify-center pt-6">
                     <img class="rounded border-t border-b border-r border-l border-gray-900 shadow " src="/images/high-five.jpg" alt="high five">

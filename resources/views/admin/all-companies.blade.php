@@ -19,7 +19,7 @@
         @if($companies->count())
             <div>
                 @foreach($companies as $company)
-                    <x-company-card class="p-3 mb-4 lg:flex justify-between bg-gray-200">
+                    <x-layout.card class="p-3 mb-4 lg:flex justify-between bg-gray-200">
                         <div class="flex">
                             <p class="text-base lg:m-0">{{ $company->name }}</p>
                         </div>
@@ -27,7 +27,7 @@
                         <div>
                             <x-button class="uppercase text-xs px-4 py-2" link='/companies/edit/{{ $company->id }}' name='edit'></x-button>
                         </div>
-                    </x-company-card>
+                    </x-layout.card>
                     
 
                 @endforeach

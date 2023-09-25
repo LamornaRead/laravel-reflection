@@ -31,7 +31,7 @@
         @if($employees->count())
             <div>
                 @foreach($employees as $employee)
-                    <x-company-card class="p-3 mb-4 lg:grid grid-cols-10 bg-gray-200">
+                    <x-layout.card class="p-3 mb-4 lg:grid grid-cols-10 bg-gray-200">
                         <div class="col-span-2">
                             <p class="text-base lg:m-0 col-span-1"><strong>Name :</strong> {{ $employee->first_name }} {{ $employee->last_name }}</p>
                         </div>
@@ -43,7 +43,7 @@
                         <div class="col-span-1">
                             <x-button class="uppercase text-xs px-4 py-2" link='/employee/edit/{{ $employee->id }}' name='edit'></x-button>
                         </div>
-                    </x-company-card>
+                    </x-layout.card>
                     
                 @endforeach
             </div>

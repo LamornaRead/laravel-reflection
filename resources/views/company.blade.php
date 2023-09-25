@@ -3,7 +3,7 @@
         <x-slot name="top"></x-slot>
         <div class="min-h-screen">
 
-            <x-company-card class="w-full mx-auto p-4 mb-6">
+            <x-layout.card class="w-full mx-auto p-4 mb-6">
                 <div class="md:flex">
                     <div class="md:mr-4 flex justify-center">
                         <img class="rounded-lg w-40" src="{{ asset('storage/' . $company->image) }}" alt="company logo">
@@ -14,7 +14,7 @@
                         <p><strong>Company Website :</strong> {{ $company->website }}</p>
                     </div>
                 </div>
-            </x-company-card>
+            </x-layout.card>
 
             @if($company->employees->count())
 
@@ -22,13 +22,13 @@
                 <x-button class="w-56" link='/home' name='Back To Dashboard'></x-button>
             </div>
         
-            <x-company-card class="p-3">
+            <x-layout.card class="p-3">
                 <div>
                     <h4 class="text-3xl pb-4 pt-2 lg:ml-2 mb-6 border-b border-gray-400">Employees <i class="fa-solid fa-user-group"></i></h4>
                 </div>
 
                 @foreach($company->employees as $em)
-                    <x-company-card class="mb-6 bg-gray-300 p-3">
+                    <x-layout.card class="mb-6 bg-gray-300 p-3">
 
                         <div class="lg:grid grid-cols-4">
                             <p class="m-0"><strong>First Name :</strong> {{ $em->first_name }}</p>
@@ -37,11 +37,11 @@
                             <p class="m-0"><strong>Telephone :</strong> {{ $em->phone_number }}</p>
                         </div>
 
-                    </x-company-card>
+                    </x-layout.card>
                 @endforeach
             
             
-            </x-company-card>
+            </x-layout.card>
     
             @else
             <p class="text-xl uppercase tracking-widest my-10">No Employees have been added yet</p>
