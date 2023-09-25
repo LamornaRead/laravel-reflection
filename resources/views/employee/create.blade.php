@@ -1,5 +1,5 @@
 <x-layout.app>
-    <x-dashboard>
+    <x-dashboard.layout>
         <x-slot name="top">
             <x-heading.small>Create Employee File</x-heading.small>
             <div class="flex justify-center">
@@ -61,5 +61,5 @@
                 </form>
             </x-layout.card>
         </div>
-    </x-dashboard>
+    </x-dashboard.layout>
 </x-layout.app>

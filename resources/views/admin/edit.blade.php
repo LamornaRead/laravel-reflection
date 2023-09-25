@@ -1,5 +1,5 @@
 <x-layout.app>
-    <x-dashboard>
+    <x-dashboard.layout>
         <x-slot name="top">
             <x-layout.top>
                 <x-slot name="back">
@@ -70,5 +70,5 @@
                     </form>
                 </x-layout.card>
 
-    </x-dashboard>
+    </x-dashboard.layout>
 </x-layout.app>

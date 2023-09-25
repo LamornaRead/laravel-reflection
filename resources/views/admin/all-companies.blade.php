@@ -1,5 +1,5 @@
 <x-layout.app>
-    <x-dashboard>
+    <x-dashboard.layout>
         <x-slot name="top">
             <div class="flex w-64 mx-auto">
                 <x-search.form></x-search.form>
@@ -40,5 +40,5 @@
             <p class="text-xl sm:text-2xl text-center uppercase tracking-widest mt-20">No companies have been added yet</p>
             <p class="text-xl sm:text-2xl text-center uppercase tracking-widest">Come Back Later</p>
         @endif
-    </x-dashboard>
+    </x-dashboard.layout>
 </x-layout.app>

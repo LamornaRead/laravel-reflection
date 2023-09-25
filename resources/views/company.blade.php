@@ -1,5 +1,5 @@
 <x-layout.app>
-    <x-dashboard>
+    <x-dashboard.layout>
         <x-slot name="top"></x-slot>
         <div class="min-h-screen">
 
@@ -52,5 +52,5 @@
 
         </div>
 
-    </x-dashboard>
+    </x-dashboard.layout>
 </x-layout.app>

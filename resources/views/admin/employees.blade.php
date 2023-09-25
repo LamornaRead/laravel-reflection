@@ -1,5 +1,5 @@
 <x-layout.app>
-    <x-dashboard>
+    <x-dashboard.layout>
         <x-slot name="top">
             <x-dropdown.box>
                 <div class="ml-auto mr-auto md:ml-0 md:mr-0">
@@ -51,5 +51,5 @@
             <p class="text-xl sm:text-2xl text-center uppercase tracking-widest">Come Back Later</p>
         @endif
 
-    </x-dashboard>
+    </x-dashboard.layout>
 </x-layout.app>
