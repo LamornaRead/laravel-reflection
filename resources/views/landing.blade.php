@@ -22,7 +22,7 @@
         </div>
     </div>
 
-    <x-container-main class="pb-2">
+    <x-container.main class="pb-2">
         <div class="lg:hidden my-4">
             <x-layout.card class="p-8 bg-gray-900">
                 <div class="border-b border-gray-400">
@@ -80,7 +80,7 @@
              
             <div class="lg:w-6/12">
                 <x-layout.card class='p-4 bg-orange-500'>
-                    <x-header class="text-2xl my-0 text-white" name='Contact Us'></x-header>
+                    <h4 class="text-2xl my-0 text-white">Contact Us</h4>
                     <form method="POST" action="/" onsubmit="return validateMessage()">
                         @csrf
 
@@ -125,7 +125,7 @@
                 </div>
             </div>
         </div>
-    </x-container-main>
+    </x-container.main>
     <div class="bg-orange-600 text-center py-8 text-white">
         <p class="m-0">&copy; copyright CMS</p>
     </div>
