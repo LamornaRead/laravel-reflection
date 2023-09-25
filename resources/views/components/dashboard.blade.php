@@ -12,7 +12,7 @@
         </div>
         
         <div {{ $attributes->merge(['class' => 'col-span-7']) }}>
-            <x-header class="bg-orange-700 my-0 py-4 md:py-12 border-b border-gray-900 text-white" name='Admin Page'></x-header>
+            <x-heading.large>Admin Page</x-heading.large>
             <div class="bg-gray-800 p-6">
                 {{ $top }}
             </div>

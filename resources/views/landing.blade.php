@@ -1,7 +1,7 @@
 <x-layout.app>
 
     <div class="lg:hidden">
-        <x-header class="bg-orange-700 text-white p-10 mt-0 mb-0" name='Company Management Services <i class="fa-solid fa-people-roof"></i>'></x-header>
+        <x-heading.large>Company Management Services <i class="fa-solid fa-people-roof"></i></x-heading.large>
     </div>
     
     <div class="hidden lg:block">
