@@ -11,7 +11,7 @@
         <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-5">
         @foreach($companies as $company)
             <x-layout.card>
-                <x-company-content :company="$company"></x-company-content>
+                <x-content.company :company="$company"></x-content.company>
             </x-layout.card>
             
 

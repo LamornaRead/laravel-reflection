@@ -40,42 +40,9 @@
 
         <div class="lg:pt-8 lg:flex gap-6">
             <div class="lg:w-6/12">
-                <x-layout.card class="p-6 bg-gray-900 text-white mb-6 tracking-wide">
-                    <h4 class="text-orange-600 pb-4">Customer Review</h4>
-                    <x-para>
-                        I recently hired CMS for my company and I can honestly say that it was the best decision I ever made.
-                        Their service provided me with everything I needed to take my business to the next level.
-                        They provided me with knowledgeable and experienced staff who had the skills and knowledge to help me with all aspects of my business. 
-                    </x-para>
+                <x-content.review-one></x-content.review-one>
 
-                    <x-para>
-                        They were always available and willing to answer any questions I had and provided helpful advice and guidance.
-                        They were also incredibly organized and efficient, ensuring that all tasks were completed quickly and accurately.
-                        The management service was also great at keeping me up to date on the latest trends and developments in the industry.
-                        Overall, I can confidently say that my business has grown significantly since hiring this management service, and I am extremely satisfied with the results.
-                    </x-para>
-                    
-                    <x-star></x-star>
-                 </x-layout.card>
-
-                 <x-layout.card class="p-6 bg-gray-900 text-white mb-6 tracking-wide">
-                    <h4 class="text-orange-600 pb-4">Customer Review</h4>
-
-                    <x-para>
-                        I recently had the pleasure of working with Company Management Services for the day-to-day management of our small business. 
-                        I was extremely impressed with their services, which made running our business much easier. 
-                        They provided us with all the necessary tools and resources to efficiently manage our operations and keep track of our financials. 
-                    </x-para>
-
-                    <x-para>
-                        They were very knowledgeable and helpful, and made sure we had all the information we needed. 
-                        The team was always available for any questions we had and was very responsive to our requests. 
-                        We are grateful to have had the opportunity to work with such a great company and would highly recommend their services to 
-                        anyone looking for a reliable and effective management solution.
-                    </x-para>
-
-                    <x-star></x-star>
-                 </x-layout.card>
+                <x-content.review-two></x-content.review-two>
             </div>
              
             <div class="lg:w-6/12">
