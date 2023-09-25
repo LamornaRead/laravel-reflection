@@ -3,7 +3,7 @@
         <x-slot name="top">
             <x-layout.top>
                 <x-slot name="back">
-                    <x-back-button href="/admin/employees/{{ $employee->company->name }}">Back</x-back-button>
+                    <x-button.back href="/admin/employees/{{ $employee->company->name }}">Back</x-button.back>
                 </x-slot>
                     
                 <x-slot name="delete">
