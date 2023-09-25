@@ -20,7 +20,6 @@
 
             <div class="my-10 flex justify-center md:block">
                 <x-button.normal class="w-56" href="/home">Back To Dashboard</x-button.normal>
-                {{-- <x-button class="w-56" link='/home' name='Back To Dashboard'></x-button> --}}
             </div>
         
             <x-layout.card class="p-3">
