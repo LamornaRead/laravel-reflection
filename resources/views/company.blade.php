@@ -1,5 +1,6 @@
 <x-layout.app>
     <x-dashboard>
+        <x-slot name="top"></x-slot>
         <div class="min-h-screen">
 
             <x-company-card class="w-full mx-auto p-4 mb-6">

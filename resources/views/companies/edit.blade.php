@@ -1,27 +1,26 @@
 <x-layout.app>
     <x-dashboard>
-        <div>
-            <div class="lg:grid lg:grid-cols-8 lg:mb-20">
-                <div class="col-span-1 mb-4">
-                    <div>
-                        <x-back-button href="/admin/all-employees">Back</x-back-button>
-                    </div>
+        <x-slot name="top">
+            <x-layout.top>
+                <x-slot name="back">
+                    <x-back-button href="/admin/all-companies">Back</x-back-button>
+                </x-slot>
                     
-                    <div>
-                        <form method="POST" action="/companies/edit/{{ $company->id  }}">
-                            @csrf
-                            @method('DELETE')
-                            <x-form.button class="text-base py-2 px-3" name='Delete File'></x-form.button> 
-                        </form>
-                    </div>
-                </div>
+                <x-slot name="delete">
+                    <form method="POST" action="/companies/edit/{{ $company->id  }}">
+                        @csrf
+                        @method('DELETE')
+                        <x-form.button class="text-base py-2 px-3" name='Delete File'></x-form.button> 
+                    </form>
+                </x-slot>
+            </x-layout.top>
+        </x-slot>
 
-                <div class="col-span-7">
-                    <x-company-card class="p-4 md:w-8/12 mx-auto">
+                    <x-company-card class="p-4 md:w-6/12 mx-auto">
                         @if(session()->has('success'))
                 
-                        <x-form.field>
-                            <p class="text-center text-white bg-green-500 w-40 py-2 px-3 mx-auto rounded">{{ session('success') }}</p>
+                        <x-form.field class="mx-auto w-40">
+                            <p class="text-center text-white bg-green-500 w-40 py-2 px-3mx-auto rounded">{{ session('success') }}</p>
                         </x-form.field>
     
                         @endif
@@ -63,11 +62,6 @@
             
                         </form>
                     </x-company-card>
-                </div>
-            </div>
-            
 
-
-        </div>
     </x-dashboard>
 </x-layout.app>

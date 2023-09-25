@@ -1,5 +1,23 @@
 <x-layout.app>
     <x-dashboard>
+        <x-slot name="top">
+
+            <x-dropdown.box>
+                <div class="ml-auto mr-auto md:ml-0 md:mr-0">
+                    <x-search.form></x-search.form>
+                </div>
+                <x-dropdown.company>
+                    @foreach ($companies as $com) 
+                        <x-dropdown.item  href="/admin/employees/{{ $com->name }}">{{ $com->name }}</x-dropdown.item>
+                    @endforeach
+                </x-dropdown.company>
+            </x-dropdown.box>
+
+        </x-slot>
+        
+
+
+
         <div>
             <h4 class="text-2xl lg:text-3xl pb-4 pt-2 lg:ml-2 mb-6 border-b border-gray-400">All Employees</h4>
         </div>

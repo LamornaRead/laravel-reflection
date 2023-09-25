@@ -13,6 +13,15 @@ class Employee extends Model
     {
         return $this->belongsTo(Company::class);
     }
+
+    public function scopeFilter($query) 
+    {
+        if(request('search')) {
+            $query->where('first_name', 'like', '%' . request('search') . '%')
+            ->orWhere('last_name', 'like', '%' . request('search') . '%');
+        }
+    }
+    
     protected $fillable = [
         'first_name',
         'last_name',

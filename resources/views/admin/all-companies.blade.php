@@ -1,8 +1,16 @@
 <x-layout.app>
     <x-dashboard>
+        <x-slot name="top">
+            <div class="flex w-64 mx-auto">
+                <x-search.form></x-search.form>
+            </div>
+
+        </x-slot>
+
         <div>
             <h4 class="text-2xl lg:text-3xl pb-4 pt-2 lg:ml-2 mb-6 border-b border-gray-400">All Companies</h4>
         </div>
+
         @if(session()->has('success'))
             <div>
                 <p class="text-center text-white bg-green-500 w-40 py-2 px-3 mx-auto rounded">{{ session('success') }}</p>

@@ -1,11 +1,16 @@
 <x-layout.app>
     <x-dashboard>
+        <x-slot name="top">
+            <x-heading.small>Create Employee File</x-heading.small>
+            <div class="flex justify-center">
+                <x-button class="mt-4" link="/home" name='home'></x-button>
+            </div>
+        </x-slot>
+
         <div>
             <x-company-card class="lg:w-6/12 mx-auto p-6">
-                <x-header class="text-3xl mb-4" name='Create Employee File'></x-header>
-                <div class="flex justify-center mb-4">
-                    <x-button class="uppercase py-2 px-4" link="/home" name='home'></x-button>
-                </div>
+
+
                     @if(session()->has('success'))
         
                         <x-form.field>

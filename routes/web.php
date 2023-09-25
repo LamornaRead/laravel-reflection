@@ -29,6 +29,10 @@ Auth::routes();
 Route::get('/home', [AdminController::class, 'index'])->middleware('auth')->name('home');
 Route::get('/admin/all-companies', [AdminController::class, 'showCompanies'])->middleware('auth')->name('all-companies');
 Route::get('/admin/all-employees', [AdminController::class, 'showEmployees'])->middleware('auth')->name('all-employees');
+Route::get('/admin/employees/{company:name}', [AdminController::class, 'showEmployeesCompany'])->middleware('auth')->name('company-employees {company:name}' );
+Route::get('/admin/edit/{employee:id}', [AdminController::class, 'editEmployees'])->middleware('auth');
+Route::patch('/admin/edit/{employee:id}', [AdminController::class, 'updateEmployees'])->middleware('auth');
+Route::delete('/admin/edit/{employee:id}', [AdminController::class, 'destroyEmployees'])->middleware('auth');
 
 //company forms
 Route::get('companies/create', [CompanyController::class, 'create'])->middleware('auth')->name('create-company');

@@ -3,11 +3,11 @@
         <x-slot name="top">
             <x-layout.top>
                 <x-slot name="back">
-                    <x-back-button href="/admin/all-employees">Back</x-back-button>
+                    <x-back-button href="/admin/employees/{{ $employee->company->name }}">Back</x-back-button>
                 </x-slot>
                     
                 <x-slot name="delete">
-                    <form method="POST" action="/employee/edit/{{ $employee->id }}">
+                    <form method="POST" action="/admin/edit/{{ $employee->id }}">
                         @csrf
                         @method('DELETE')
                         <x-form.button class="text-base py-2 px-3" name='Delete File'></x-form.button> 
@@ -17,18 +17,16 @@
         </x-slot>
 
 
-
-
-                <x-company-card class="p-4 md:w-6/12 mx-auto">
+                <x-company-card class="p-4 md:w-4/12 mx-auto">
                     @if(session()->has('success'))
-                
+    
                     <x-form.field class="mx-auto w-40">
                         <p class="text-center text-white bg-green-500 w-40 py-2 px-3mx-auto rounded">{{ session('success') }}</p>
                     </x-form.field>
 
                     @endif
                     
-                    <form method="POST" action="/employee/edit/{{ $employee->id }}" onsubmit="return validateEmployee()">
+                    <form method="POST" action="/admin/edit/{{ $employee->id }}" onsubmit="return validateEmployee()">
                         @csrf
                         @method('PATCH')
                         
@@ -71,7 +69,6 @@
     
                     </form>
                 </x-company-card>
-
 
     </x-dashboard>
 </x-layout.app>

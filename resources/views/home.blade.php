@@ -1,5 +1,11 @@
 <x-layout.app>
     <x-dashboard>
+        <x-slot name="top">
+            <div class="w-64 mx-auto">
+                <x-search.form></x-search.form>
+             </div>
+        </x-slot>
+
         @if($companies->count())
     
         <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-5">

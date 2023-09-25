@@ -69,6 +69,8 @@ class EmployeeController extends Controller
     {
         $employee->delete();
 
+        // return back()->with('success', 'File deleted');
+
         session()->flash('success', 'File Deleted');
 
         return redirect('/admin/all-employees');

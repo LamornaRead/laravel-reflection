@@ -15,6 +15,14 @@ class Company extends Model
     {
         return $this->hasMany(Employee::class);
     }
+    
+    public function scopeFilter($query) 
+    {
+        if(request('search')) {
+            $query->where('name', 'like', '%' . request('search') . '%');
+        }
+    }
+    
     protected $fillable = [
         'name',
         'email',

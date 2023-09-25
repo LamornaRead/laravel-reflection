@@ -1,6 +1,4 @@
-
-
-
+@props(['top'])
 <div>
     <div class="md:grid grid-cols-8">
         <div class="col-span-1 bg-gray-900 p-4 hidden md:block">
@@ -14,7 +12,10 @@
         </div>
         
         <div {{ $attributes->merge(['class' => 'col-span-7']) }}>
-            <x-header class="bg-orange-600 my-0 py-4 md:py-12 border-b border-gray-900" name='Admin Page'></x-header>
+            <x-header class="bg-orange-700 my-0 py-4 md:py-12 border-b border-gray-900 text-white" name='Admin Page'></x-header>
+            <div class="bg-gray-800 p-6">
+                {{ $top }}
+            </div>
             <div class="p-8 md:min-h-screen">
                 {{ $slot }}
             </div>
