@@ -1,6 +1,6 @@
 @props(['name'])
 
-<input {{ $attributes->merge(['class' => 'h-8 pl-2 my-2 h-10']) }} 
+<input {{ $attributes->merge(['class' => 'pl-2 h-7']) }} 
   id="{{ $name }}"
   name="{{ $name }}"
   type="file" 
