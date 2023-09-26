@@ -1,5 +1,3 @@
-
-
 <x-layout.card class="p-8 bg-gray-200 lg:flex lg:gap-4 mb-4 lg:mt-8">
     <div class="hidden lg:block lg:w-3/6">
         <img class="rounded shadow-sm mx-auto" style="min-height: 50px; max-height:300px" src="/images/high-five.jpg" alt="high five">
