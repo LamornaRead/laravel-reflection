@@ -1,5 +1,6 @@
 <x-layout.card class="p-6 bg-gray-900 text-white mb-6 tracking-wide">
     <h4 class="text-orange-600 pb-4">Customer Review</h4>
+    
     <x-content.para>
         I recently hired CMS for my company and I can honestly say that it was the best decision I ever made.
         Their service provided me with everything I needed to take my business to the next level.
