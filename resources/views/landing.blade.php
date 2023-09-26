@@ -50,7 +50,7 @@
             <form method="POST" action="/" onsubmit="return validateMessage()">
                 @csrf
 
-                <div class="md:flex md:gap-6">
+                <div class="md:flex md:gap-6 md:mt-4 md:mb-4">
                     <div class="md:w-1/2">
                         <x-form.field>
                             <x-form.label class="text-white" for='name'>Fullname <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></x-form.label>
@@ -74,7 +74,7 @@
                         <x-form.js-error id="commentErr"></x-form.js-error>
                     </x-form.field>
 
-                    <x-form.field>
+                    <x-form.field class="my-4">
                         <button class="bg-black w-32 mx-auto py-3 rounded text-white" type="submit">SEND</button>
                     </x-form.field>
                 </div>
