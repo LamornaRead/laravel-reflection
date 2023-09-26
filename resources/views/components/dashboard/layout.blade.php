@@ -19,7 +19,6 @@
             <div class="p-8 md:min-h-screen">
                 {{ $slot }}
             </div>
-        </div>
-        
+        </div>  
     </div>
 </div>
