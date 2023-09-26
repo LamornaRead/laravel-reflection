@@ -32,25 +32,21 @@
         @endif
 
         @if($company->employees->count())
-        <div>
             @foreach($company->employees as $em)
-            <x-layout.card class="p-3 mb-4 lg:grid grid-cols-10 bg-gray-200">
-                <div class="col-span-2">
-                    <p class="text-base lg:m-0 col-span-1"><strong>Name :</strong> {{ $em->first_name }} {{ $em->last_name }}</p>
-                </div>
+                <x-layout.card class="p-3 mb-4 lg:grid grid-cols-10 bg-gray-200">
+                    <div class="col-span-2">
+                        <p class="text-base lg:m-0 col-span-1"><strong>Name :</strong> {{ $em->first_name }} {{ $em->last_name }}</p>
+                    </div>
 
-                <div class="col-span-7">
-                    <p class="text-base lg:ml-4 lg:mb-0 col-span-3"><strong>Company :</strong> {{ $company->name }}</p>
-                </div>
+                    <div class="col-span-7">
+                        <p class="text-base lg:ml-4 lg:mb-0 col-span-3"><strong>Company :</strong> {{ $company->name }}</p>
+                    </div>
 
-                <div class="col-span-1">
-                    <x-button.normal class="mt-4 px-4 py-2" href="/admin/edit/{{ $em->id }}">Edit</x-button.normal>
-                </div>
-            </x-layout.card>
-            
+                    <div class="col-span-1">
+                        <x-button.normal class="mt-4 px-4 py-2" href="/admin/edit/{{ $em->id }}">Edit</x-button.normal>
+                    </div>
+                </x-layout.card>
            @endforeach
-        </div>
-
         @else
             <p class="text-xl sm:text-2xl text-center uppercase tracking-widest mt-20">No Employees have been added yet</p>
             <p class="text-xl sm:text-2xl text-center uppercase tracking-widest">Come Back Later</p>
