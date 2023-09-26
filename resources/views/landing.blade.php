@@ -38,62 +38,62 @@
             </x-layout.card>
         </div>
 
-        <div class="lg:pt-8 lg:flex gap-6">
-            <div class="lg:w-6/12">
-                <x-content.review-one></x-content.review-one>
+        <x-content.about></x-content.about>
 
-                <x-content.review-two></x-content.review-two>
-            </div>
-             
-            <div class="lg:w-6/12">
-                <x-layout.card class='p-4 bg-orange-500'>
-                    <h4 class="text-2xl my-0 text-white">Contact Us</h4>
-                    <form method="POST" action="/" onsubmit="return validateMessage()">
-                        @csrf
+        <div class="lg:grid lg:grid-cols-2 lg:gap-4">
+            <x-content.review-one></x-content.review-one>
+            <x-content.review-two></x-content.review-two>
+        </div>
+            
+        <x-layout.card class='p-4 bg-gray-800'>
+            <h4 class="text-2xl text-red-600 mb-4">Contact Us</h4>
+            <form method="POST" action="/" onsubmit="return validateMessage()">
+                @csrf
 
+                <div class="md:flex md:gap-6">
+                    <div class="md:w-1/2">
                         <x-form.field>
                             <x-form.label class="text-white" for='name'>Fullname <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></x-form.label>
                             <x-form.input name='name'></x-form.input>
                             <x-form.js-error id="nameErr"></x-form.js-error>
                         </x-form.field>
-    
+                    </div>
+                    <div class="md:w-1/2">
                         <x-form.field>
                             <x-form.label class="text-white" for='email'>Your Email <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></x-form.label>
                             <x-form.input name='email'></x-form.input>
                             <x-form.js-error id="emailErr"></x-form.js-error>
                         </x-form.field>
-    
-    
-                        <x-form.field>
-                            <x-form.label class="text-white" for='comment'>Your Message <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></x-form.label>
-                            <x-form.textarea name='comment' rows='5'>{{{ old('comment') }}}</x-form.textarea>
-                            <x-form.js-error id="commentErr"></x-form.js-error>
-                        </x-form.field>
-    
-    
-                        <x-form.field>
-                            <button class="bg-gray-900 w-32 mx-auto py-3 rounded text-white" type="submit">SEND</button>
-                        </x-form.field>
-    
-    
-                        @if(session()->has('success'))
-    
-                        <x-form.field>
-                            <p class="text-center text-white bg-green-500 w-40 py-2 px-3 mx-auto rounded">{{ session('success') }}</p>
-                        </x-form.field>
-    
-                        @endif
-    
-                    </form>
-                </x-layout.card>
-
-                <div class="hidden lg:flex justify-center pt-6">
-                    <img class="rounded border-t border-b border-r border-l border-gray-900 shadow " src="/images/high-five.jpg" alt="high five">
+                    </div>
                 </div>
-            </div>
-        </div>
+
+                <div>
+                    <x-form.field>
+                        <x-form.label class="text-white" for='comment'>Your Message <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></x-form.label>
+                        <x-form.textarea name='comment' rows='3'>{{{ old('comment') }}}</x-form.textarea>
+                        <x-form.js-error id="commentErr"></x-form.js-error>
+                    </x-form.field>
+
+
+                    <x-form.field>
+                        <button class="bg-black w-32 mx-auto py-3 rounded text-white" type="submit">SEND</button>
+                    </x-form.field>
+                </div>
+
+                <div>
+                    @if(session()->has('success'))
+
+                    <x-form.field>
+                        <p class="text-center text-white bg-green-500 w-40 py-2 px-3 mx-auto rounded">{{ session('success') }}</p>
+                    </x-form.field>
+
+                    @endif
+                </div>
+            </form>
+        </x-layout.card>
     </x-container.main>
-    <div class="bg-orange-600 text-center py-8 text-white">
+    
+    <div class="bg-orange-700 text-center py-8 text-white">
         <p class="m-0">&copy; copyright CMS</p>
     </div>
   

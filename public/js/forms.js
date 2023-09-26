@@ -11,11 +11,11 @@ const phone = document.getElementById('phone_number');
 function validateMessage() {
     let fields = [document.getElementById('name'), 
                     document.getElementById('email'),
-                    document.getElementById('comment'),
+                    document.getElementById('comment')
                     ];
     let errMessage = [document.getElementById('nameErr'),
                     document.getElementById('emailErr'),
-                    document.getElementById('commentErr'),
+                    document.getElementById('commentErr')
                 ];
 
     var err = 0;
@@ -23,18 +23,22 @@ function validateMessage() {
     for (var i = 0; i < fields.length; i++) {
         if(fields[i].value == "") {
             err++
+            fields[i].style.border = '1px solid red';
             errMessage[i].innerHTML = `Please fill in ${fields[i].name}`;
             errMessage[i].style.display = 'block';
         } else {
+            fields[i].style.border = '';
             errMessage[i].innerHTML = '';
             errMessage[i].style.display = 'none';
 
             
             if(!emailFormat.test(email.value)) {
             err + 1;
+            fields[i].style.border = '1px solid red'; 
             errMessage[1].style.display = 'block';
             errMessage[1].innerHTML = `Please fill out a valid email`;
             } else {
+            fields[i].style.border = '';
             errMessage[1].style.display = 'none';
             errMessage[1].innerHTML = '';
             }
