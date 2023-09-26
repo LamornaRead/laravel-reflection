@@ -6,6 +6,5 @@
     </div>
     <div class="ml-auto mr-auto md:m-0">
          {{ $delete }}
-    </div>
-    
+    </div>    
 </div>
