@@ -74,7 +74,6 @@
                         <x-form.js-error id="commentErr"></x-form.js-error>
                     </x-form.field>
 
-
                     <x-form.field>
                         <button class="bg-black w-32 mx-auto py-3 rounded text-white" type="submit">SEND</button>
                     </x-form.field>
@@ -82,17 +81,15 @@
 
                 <div>
                     @if(session()->has('success'))
-
-                    <x-form.field>
-                        <p class="text-center text-white bg-green-500 w-40 py-2 px-3 mx-auto rounded">{{ session('success') }}</p>
-                    </x-form.field>
-
+                        <x-form.field>
+                            <p class="text-center text-white bg-green-500 w-40 py-2 px-3 mx-auto rounded">{{ session('success') }}</p>
+                        </x-form.field>
                     @endif
                 </div>
             </form>
         </x-layout.card>
     </x-container.main>
-    
+
     <div class="bg-orange-700 text-center py-8 text-white">
         <p class="m-0">&copy; copyright CMS</p>
     </div>
