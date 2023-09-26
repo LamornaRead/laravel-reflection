@@ -4,7 +4,6 @@
             <div class="flex w-64 mx-auto">
                 <x-search.form></x-search.form>
             </div>
-
         </x-slot>
 
         <div>
@@ -16,22 +15,19 @@
                 <p class="text-center text-white bg-green-500 w-40 py-2 px-3 mx-auto rounded">{{ session('success') }}</p>
             </div>
         @endif
+
         @if($companies->count())
-            <div>
-                @foreach($companies as $company)
-                    <x-layout.card class="p-3 mb-4 lg:flex justify-between bg-gray-200">
-                        <div class="flex">
-                            <p class="text-base lg:m-0">{{ $company->name }}</p>
-                        </div>
+            @foreach($companies as $company)
+                <x-layout.card class="p-3 mb-4 lg:flex justify-between bg-gray-200">
+                    <div class="flex">
+                        <p class="text-base lg:m-0">{{ $company->name }}</p>
+                    </div>
 
-                        <div>
-                            <x-button.normal class="mt-4 px-4 py-2" href="/companies/edit/{{ $company->id }}">Edit</x-button.normal>
-                        </div>
-                    </x-layout.card>
-                    
-
-                @endforeach
-            </div>
+                    <div>
+                        <x-button.normal class="mt-4 px-4 py-2" href="/companies/edit/{{ $company->id }}">Edit</x-button.normal>
+                    </div>
+                </x-layout.card>
+            @endforeach
 
             <div class="pt-8">
                 {{ $companies->links() }}
