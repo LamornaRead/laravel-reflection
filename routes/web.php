@@ -8,13 +8,13 @@ use Illuminate\Support\Facades\Route;
 
 
 //landing page for public
-Route::get('/', [HomeController::class, 'index']);
-Route::post('/', [HomeController::class, 'store']);
+// Route::get('/', [HomeController::class, 'index']);
+// Route::post('/', [HomeController::class, 'store']);
 
 Auth::routes();
 
 //admin dashboard
-Route::get('/home', [AdminController::class, 'index'])->middleware('auth')->name('home');
+Route::get('/', [AdminController::class, 'index'])->middleware('auth')->name('home');
 Route::get('/admin/all-companies', [AdminController::class, 'showCompanies'])->middleware('auth')->name('all-companies');
 Route::get('/admin/all-employees', [AdminController::class, 'showEmployees'])->middleware('auth')->name('all-employees');
 Route::get('/admin/employees/{company:name}', [AdminController::class, 'showEmployeesCompany'])->middleware('auth')->name('company-employees {company:name}' );

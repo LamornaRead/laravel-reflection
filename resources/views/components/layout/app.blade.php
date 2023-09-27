@@ -41,7 +41,7 @@
                         @else
                              
                             <p class="pl-2 m-0 uppercase text-orange-600">{{ Auth::user()->name }}</p>
-                            <x-dropdown.item href="/home" :active="request()->routeIs('home')">All Info</x-dropdown.item>
+                            <x-dropdown.item href="/" :active="request()->routeIs('home')">All Info</x-dropdown.item>
                             <x-dropdown.item href="/admin/all-companies" :active="request()->routeIs('all-companies')">All Companies</x-dropdown.item>
                             <x-dropdown.item href="/admin/all-employees" :active="request()->routeIs('all-employees')">All Employees</x-dropdown.item>
                             <x-dropdown.item href="/companies/create" :active="request()->routeIs('create-company')">Add Company</x-dropdown.item>
@@ -70,7 +70,7 @@
                                 <button class="py-2 px-6">{{ Auth::user()->name }} <i class="fa-solid fa-chevron-down fa-xs"></i></button>
                             </x-slot>
                             
-                            <x-dropdown.item href="/home" :active="request()->routeIs('home')">All Info</x-dropdown.item>
+                            <x-dropdown.item href="/" :active="request()->routeIs('home')">All Info</x-dropdown.item>
                             <x-dropdown.item href="/admin/all-companies" :active="request()->routeIs('all-companies')">All Companies</x-dropdown.item>
                             <x-dropdown.item href="/admin/all-employees" :active="request()->routeIs('all-employees')">All Employees</x-dropdown.item>
                             <x-dropdown.item href="/companies/create" :active="request()->routeIs('create-company')">Add Company</x-dropdown.item>

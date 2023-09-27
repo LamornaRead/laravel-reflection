@@ -20,8 +20,6 @@ class EmployeeController extends Controller
 
     public function store()
     {
-        //send message
-        // return request()->all();
         $attributes = request()->validate([
             'first_name' => ['required', 'min:3', 'max:255'],
             'last_name' => ['required', 'min:3', 'max:255'],
@@ -48,8 +46,6 @@ class EmployeeController extends Controller
 
     public function update(Employee $employee) 
     {
-        //  ddd(request()->all());
-        //  return request()->all();
         $attributes = request()->validate([
             'first_name' => ['required', 'min:3', 'max:255'],
             'last_name' => ['required', 'min:3', 'max:255'],
@@ -58,8 +54,6 @@ class EmployeeController extends Controller
             'phone_number' => ['required', 'regex:/^([0-9\s\-\+\(\)]*)$/', 'min:10', Rule::unique('employees', 'phone_number')->ignore($employee->id)],
         ]);
         
-
-
         $employee->update($attributes);
 
         return back()->with('success', 'File Updated');
@@ -68,8 +62,6 @@ class EmployeeController extends Controller
     public function destroy(Employee $employee)
     {
         $employee->delete();
-
-        // return back()->with('success', 'File deleted');
 
         session()->flash('success', 'File Deleted');
 

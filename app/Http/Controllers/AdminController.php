@@ -57,8 +57,6 @@ class AdminController extends Controller
 
     public function updateEmployees(Employee $employee) 
     {
-        //  ddd(request()->all());
-        //  return request()->all();
         $attributes = request()->validate([
             'first_name' => ['required', 'min:3', 'max:255'],
             'last_name' => ['required', 'min:3', 'max:255'],
@@ -77,8 +75,6 @@ class AdminController extends Controller
     public function destroyEmployees(Employee $employee)
     {
         $employee->delete();
-
-        // return back()->with('success', 'File deleted');
 
         session()->flash('success', 'File Deleted');
 

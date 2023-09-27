@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
        Company::factory(20)->create();
+
        Employee::factory(5)->create(['company_id' => '1']);
        Employee::factory(3)->create(['company_id' => '2']);
        Employee::factory(2)->create(['company_id' => '3']);
@@ -53,6 +54,5 @@ class DatabaseSeeder extends Seeder
        Employee::factory(2)->create(['company_id' => '19']);
        Employee::factory(2)->create(['company_id' => '20']);
 
-    
     }
 }

@@ -39,12 +39,6 @@ class CompanyController extends Controller
 
     public function store()
     {
-
-        // $path = request()->file('image')->store('thumbnails');
-        // return 'done' . $path;
-        // ddd(request()->file('image'));
-        // return request()->all();
-
         $attributes = request()->validate([
             'name' => ['required', 'min:3', 'max:255'],
             'email' => ['required', 'email', 'max:255', Rule::unique('companies', 'email')],
