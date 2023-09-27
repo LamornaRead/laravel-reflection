@@ -23,13 +23,16 @@ class DatabaseSeeder extends Seeder
         Company::truncate();
         Employee::truncate();
         Schema::enableForeignKeyConstraints();
-        // \App\Models\User::factory(10)->create();
 
         User::factory()->create([
             'name' => 'admin',
             'email' => 'admin@admin.com',
             'password' => bcrypt('password')
         ]);
+
+
+    // run to see full design
+    // comment out for production
 
        Company::factory(20)->create();
 
