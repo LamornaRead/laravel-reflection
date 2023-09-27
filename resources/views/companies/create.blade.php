@@ -2,12 +2,9 @@
     <x-dashboard.layout>
         <x-slot name="top">
             <x-heading.small>Create Company File</x-heading.small>
-            <div class="flex justify-center">
-                <x-button.normal class="mt-4" href="/home">Home</x-button.normal>
-            </div>
         </x-slot>
 
-        <x-layout.card class="lg:w-7/12 mx-auto my-10 p-3">
+        <x-layout.card class="lg:w-7/12 mx-auto my-16 p-3">
             @if(session()->has('success'))
                 <x-form.field>
                     <p class="text-center text-white bg-green-500 w-40 py-2 px-3 mx-auto rounded">{{ session('success') }}</p>

@@ -3,13 +3,9 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\EmployeeController;
-use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 
-//landing page for public
-// Route::get('/', [HomeController::class, 'index']);
-// Route::post('/', [HomeController::class, 'store']);
 
 Auth::routes();
 

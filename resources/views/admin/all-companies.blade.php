@@ -1,7 +1,7 @@
 <x-layout.app>
     <x-dashboard.layout>
         <x-slot name="top">
-            <div class="flex w-64 mx-auto">
+            <div class="flex w-64 ml-auto mr-auto md:ml-0 md:mr-0 md:block">
                 <x-search.form></x-search.form>
             </div>
         </x-slot>

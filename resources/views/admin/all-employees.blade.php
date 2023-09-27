@@ -5,17 +5,20 @@
                 <div class="ml-auto mr-auto md:ml-0 md:mr-0">
                     <x-search.form></x-search.form>
                 </div>
-                <x-dropdown.company>
-                    <x-slot name="trigger">
-                        <button class="px-6 h-10 h-12 my-1 text-base bg-orange-700 hover:bg-orange-600 rounded text-white w-full">
-                            {{ isset($currentCompany) ? $currentCompany->name : 'Company' }}
-                        </button>
-                    </x-slot>
-                    @foreach ($companies as $com) 
-                        <x-dropdown.item  href="/admin/employees/{{ $com->name }}">{{ $com->name }}</x-dropdown.item>
-                    @endforeach
-                </x-dropdown.company>
-            </x-dropdown.box>
+                    @if ($companies->count()) 
+                        <x-dropdown.company>
+                            <x-slot name="trigger">
+                                <button class="px-6 h-10 h-12 my-1 text-base bg-orange-700 hover:bg-orange-600 rounded text-white w-full">
+                                    {{ isset($currentCompany) ? $currentCompany->name : 'Company' }}
+                                </button>
+                            </x-slot>
+                            
+                            @foreach ($companies as $com) 
+                                <x-dropdown.item  href="/admin/employees/{{ $com->name }}">{{ $com->name }}</x-dropdown.item>
+                            @endforeach
+                        </x-dropdown.company>
+                    @endif
+                </x-dropdown.box>
         </x-slot>
         
         <div>
