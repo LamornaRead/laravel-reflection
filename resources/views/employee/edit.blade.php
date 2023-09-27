@@ -64,8 +64,9 @@
                 <x-form.field>
                     <x-form.label for='company_id'>Company Name <i class="fa-solid fa-star-of-life fa-2xs" style="color: #cc0000;"></i></x-form.label>
                     <x-form.select name='company_id'>
+                        <option value="{{ $employee->company_id }}">{{ $employee->company->name }}</option>
                         @foreach ($companies as $company)
-                        <option value="{{ $company->id }}" {{ old('company_id') == $company->id ? 'selected' : ''}}>{{ $company->name }}</option>
+                            <option value="{{ $company->id }}" {{ old('company_id') == $company->id ? 'selected' : ''}}>{{ $company->name }}</option>
                         @endforeach
                     </x-form.select>
                 </x-form.field>
