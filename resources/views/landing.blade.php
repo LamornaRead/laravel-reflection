@@ -46,7 +46,7 @@
         </div>
             
         <x-layout.card class='p-4 bg-gray-800'>
-            <h4 class="text-2xl text-red-600 mb-4">Contact Us</h4>
+            <h4 class="text-2xl text-orange-600 mb-4">Contact Us</h4>
             <form method="POST" action="/" onsubmit="return validateMessage()">
                 @csrf
 
@@ -75,7 +75,7 @@
                     </x-form.field>
 
                     <x-form.field class="my-4">
-                        <button class="bg-black w-32 mx-auto py-3 rounded text-white" type="submit">SEND</button>
+                        <button class="bg-orange-700 text-white w-32 mx-auto py-3 rounded" type="submit">SEND</button>
                     </x-form.field>
                 </div>
 
