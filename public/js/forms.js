@@ -32,25 +32,27 @@ function validateCompany() {
 
         } else {
             fields[i].style.border = '';
-
-            if(!emailFormat.test(email.value)) {
-                err + 1;
-                fields[1].style.border = '1px solid red';
-
-            } else {
-                fields[1].style.border = '';
-            }
-
-            if(!allowedExtensions.exec(fileInput.value)){
-                err + 1;
-                errMessage.style.display = 'block';
-                errMessage.innerHTML = 'Please add a valid filetype';
-                // fileInput.value = '';
-            } else {
-                errMessage.style.display = 'none';
-                errMessage.innerHTML = '';
-            }
         }
+
+    }
+
+    if(!emailFormat.test(email.value)) {
+        err + 1;
+        fields[1].style.border = '1px solid red';
+        return false;
+    } else {
+        fields[1].style.border = '';
+    }
+
+    if(!allowedExtensions.exec(fileInput.value)){
+        err + 1;
+        errMessage.style.display = 'block';
+        errMessage.innerHTML = 'Please add a valid filetype';
+        // fileInput.value = '';
+        return false;
+    } else {
+        errMessage.style.display = 'none';
+        errMessage.innerHTML = '';
     }
 
     if (err === 0) {
@@ -85,26 +87,28 @@ function validateCompanyUpdate() {
             }
         } else {
             fields[i].style.border = '';
-
-            if(!emailFormat.test(email.value)) {
-                err + 1;
-                fields[1].style.border = '1px solid red';
-            } else {
-                fields[1].style.border = '';
-            }
-
-            if (fileInput.value != '') {
-                if(!allowedExtensions.exec(fileInput.value)){
-                    err + 1;
-                    errMessage.style.display = 'block';
-                    errMessage.innerHTML = 'Please add a valid filetype';
-                    // fileInput.value = '';
-                }
-            } else {
-                errMessage.style.display = 'none';
-                errMessage.innerHTML = '';
-            }
         }
+    }
+
+    if(!emailFormat.test(email.value)) {
+        err + 1;
+        fields[1].style.border = '1px solid red';
+        return false;
+    } else {
+        fields[1].style.border = '';
+    }
+
+    if (fileInput.value != '') {
+        if(!allowedExtensions.exec(fileInput.value)){
+            err + 1;
+            errMessage.style.display = 'block';
+            errMessage.innerHTML = 'Please add a valid filetype';
+            return false;
+            // fileInput.value = '';
+        }
+    } else {
+        errMessage.style.display = 'none';
+        errMessage.innerHTML = '';
     }
 
     if (err === 0) {
@@ -133,21 +137,23 @@ function validateEmployee() {
             
         } else {
             fields[i].style.border = '';
-
-            if(!emailFormat.test(email.value)) {
-                err + 1;
-                fields[2].style.border = '1px solid red';
-            } else {
-                fields[2].style.border = '';
-            }
-
-            if(!phoneFormat.test(phone.value)) {
-                err + 1;
-                fields[3].style.border = '1px solid red';
-            } else {
-                fields[3].style.border = '';
-            }
         }
+    }
+
+    if(!emailFormat.test(email.value)) {
+        err + 1;
+        fields[2].style.border = '1px solid red';
+        return false;
+    } else {
+        fields[2].style.border = '';
+    }
+
+    if(!phoneFormat.test(phone.value)) {
+        err + 1;
+        fields[3].style.border = '1px solid red';
+        return false;
+    } else {
+        fields[3].style.border = '';
     }
 
     if (err === 0) {
