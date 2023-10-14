@@ -12,6 +12,6 @@
     }
 </style>
 
-@error('{{ $name }}')
+@error($name)
     <p class="text-xs text-red-700 mb-0">{{ $message }}</p>
 @enderror
